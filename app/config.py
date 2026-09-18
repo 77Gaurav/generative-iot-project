@@ -18,6 +18,9 @@ class Settings:
     # --- INGESTION ---
     COMPONENTS_PATH = os.getenv("COMPONENTS_PATH", "DATA/components.json")
 
+    # --- PIN LAYOUTS ---
+    PINS_PATH = os.getenv("PINS_PATH", "DATA/pins")
+
     # --- EMBEDDINGS (sentence-transformers) ---
     EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "sentence-transformers/all-mpnet-base-v2")
     EMBEDDING_DIM = int(os.getenv("EMBEDDING_DIM", "768"))

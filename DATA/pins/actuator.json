@@ -1,0 +1,314 @@
+{
+  "type": "actuator",
+  "components": [
+    {
+      "component_id": "servo_sg90",
+      "component_name": "SG90 Servo Motor",
+      "pin_count": 3,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 4.8,
+        "voltage_max": 6.0,
+        "notes": "Supply 5V typical (brown=GND, red=VCC, orange=SIGNAL). Stall current ~700mA."
+      },
+      "pins": [
+        {
+          "pin": "GND",
+          "function": "brown wire, ground (common with MCU GND)",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "VCC",
+          "function": "red wire, supply 4.8-6V (5V)",
+          "direction": "power",
+          "voltage_min": 4.8,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "SIGNAL",
+          "function": "orange wire, PWM control (50Hz, 1-2ms pulse); 3.3V signal OK, 5V works",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        }
+      ],
+      "interfaces": {},
+      "notes": "PWM at 50Hz: ~1ms=0deg, 1.5ms=90deg, 2ms=180deg. Do not power from the MCU 5V pin directly if worried; use external 5V with shared ground."
+    },
+    {
+      "component_id": "dc_motor",
+      "component_name": "DC Motor",
+      "pin_count": 2,
+      "logic_level": null,
+      "power": {
+        "vcc_pins": [
+          "M+"
+        ],
+        "gnd_pins": [
+          "M-"
+        ],
+        "voltage_min": 3.0,
+        "voltage_max": 12.0,
+        "notes": "Voltage depends on the motor (e.g. 3-12V). Reversing polarity reverses direction."
+      },
+      "pins": [
+        {
+          "pin": "M+",
+          "function": "motor terminal 1 (to driver OUT; NOT directly to MCU)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 12.0
+        },
+        {
+          "pin": "M-",
+          "function": "motor terminal 2 (to driver OUT)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 12.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "Always drive through an L298N/ULN2003/MOSFET H-bridge and add a flyback diode; never connect directly to the microcontroller."
+    },
+    {
+      "component_id": "l298n",
+      "component_name": "L298N Motor Driver",
+      "pin_count": 11,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "12V",
+          "5V"
+        ],
+        "gnd_pins": [
+          "GND",
+          "GND"
+        ],
+        "voltage_min": 5.0,
+        "voltage_max": 35.0,
+        "notes": "Motor supply up to 35V (VS); onboard 5V output enables logic (install jumper)."
+      },
+      "pins": [
+        {
+          "pin": "12V",
+          "function": "motor supply input (VS, 5-35V; 12V typical)",
+          "direction": "power",
+          "voltage_min": 5.0,
+          "voltage_max": 35.0
+        },
+        {
+          "pin": "GND",
+          "function": "ground (motor supply common)",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "5V",
+          "function": "5V output for logic (needs jumper; powers MCU optionally)",
+          "direction": "power",
+          "voltage_min": 4.8,
+          "voltage_max": 5.4
+        },
+        {
+          "pin": "ENA",
+          "function": "enable/pwm channel A (jumper to 5V for always-on; PWM for speed)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "IN1",
+          "function": "logic input 1 (direction)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "IN2",
+          "function": "logic input 2 (direction)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "IN3",
+          "function": "logic input 3 (direction)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "IN4",
+          "function": "logic input 4 (direction)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "ENB",
+          "function": "enable/pwm channel B (jumper to 5V for always-on)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "OUT1",
+          "function": "motor A terminal 1",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 35.0
+        },
+        {
+          "pin": "OUT2",
+          "function": "motor A terminal 2",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 35.0
+        },
+        {
+          "pin": "OUT3",
+          "function": "motor B terminal 1",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 35.0
+        },
+        {
+          "pin": "OUT4",
+          "function": "motor B terminal 2",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 35.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "Logic inputs are 5V; 3.3V MCU outputs are usually still detected as high, but a level shifter is safer. ALWAYS share GND between MCU, driver, and motor supply."
+    },
+    {
+      "component_id": "relay_module",
+      "component_name": "5V Relay Module",
+      "pin_count": 6,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "VCC",
+          "JD-VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 4.5,
+        "voltage_max": 5.5,
+        "notes": "Control VCC 5V; JD-VCC feeds relay coil (jumper to VCC by default)."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "logic supply 5V",
+          "direction": "power",
+          "voltage_min": 4.5,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GND",
+          "function": "ground (shared with MCU)",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "IN",
+          "function": "control input (active LOW on most boards: pull LOW to energize)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "COM",
+          "function": "relay common (load supply in)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 250.0
+        },
+        {
+          "pin": "NO",
+          "function": "normally-open contact (load out, closed when relay ON)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 250.0
+        },
+        {
+          "pin": "NC",
+          "function": "normally-closed contact (closed when relay OFF)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 250.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "IN is usually active-LOW. Rated up to 10A @ 250VAC / 125VAC depending on board. Drive the IN from a transistor if using 3.3V logic on sensitive boards."
+    },
+    {
+      "component_id": "stepper_28byj48",
+      "component_name": "28BYJ-48 Stepper Motor",
+      "pin_count": 5,
+      "logic_level": null,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [],
+        "voltage_min": 5.0,
+        "voltage_max": 12.0,
+        "notes": "Red common wire is coil supply (5-12V, typically 5V). NEVER power coils from a GPIO."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "red wire, coil common supply (via ULN2003 driver)",
+          "direction": "power",
+          "voltage_min": 5.0,
+          "voltage_max": 12.0
+        },
+        {
+          "pin": "IN1",
+          "function": "blue wire, coil A (to ULN2003 IN1)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "IN2",
+          "function": "pink wire, coil B (to ULN2003 IN2)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "IN3",
+          "function": "yellow wire, coil C (to ULN2003 IN3)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "IN4",
+          "function": "orange wire, coil D (to ULN2003 IN4)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        }
+      ],
+      "interfaces": {},
+      "notes": "Must be driven by a ULN2003A driver board (connect motor VCC through the driver's VCC pin). 5.625deg/step, 64:1 gear reduction."
+    }
+  ]
+}

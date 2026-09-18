@@ -1,0 +1,2714 @@
+{
+  "type": "compute",
+  "components": [
+    {
+      "component_id": "esp32",
+      "component_name": "ESP32",
+      "pin_count": 30,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "3V3",
+          "VIN"
+        ],
+        "gnd_pins": [
+          "GND",
+          "GND"
+        ],
+        "voltage_min": 3.0,
+        "voltage_max": 5.5,
+        "notes": "VIN accepts 5V (e.g. USB) and the onboard regulator outputs 3V3."
+      },
+      "pins": [
+        {
+          "pin": "3V3",
+          "function": "regulated 3.3V supply output",
+          "direction": "power",
+          "voltage_min": 3.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "VIN",
+          "function": "5V power input / USB 5V rail",
+          "direction": "power",
+          "voltage_min": 4.5,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "EN",
+          "function": "enable / reset (active low)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO0",
+          "function": "digital IO / boot strapping (pulled high)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO1",
+          "function": "UART0 TX / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO2",
+          "function": "digital IO / ADC1",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO3",
+          "function": "UART0 RX / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO4",
+          "function": "digital IO / ADC / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO5",
+          "function": "VSPI SS / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO12",
+          "function": "digital IO / ADC / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO13",
+          "function": "digital IO / ADC / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO14",
+          "function": "digital IO / ADC / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO15",
+          "function": "digital IO / ADC / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO16",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO17",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO18",
+          "function": "VSPI SCK / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO19",
+          "function": "VSPI MISO / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO21",
+          "function": "I2C SDA / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO22",
+          "function": "I2C SCL / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO23",
+          "function": "VSPI MOSI / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO25",
+          "function": "digital IO / DAC",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO26",
+          "function": "digital IO / DAC",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO27",
+          "function": "digital IO / ADC / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO32",
+          "function": "digital IO / ADC / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO33",
+          "function": "digital IO / ADC / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO34",
+          "function": "input only / ADC",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO35",
+          "function": "input only / ADC",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO36",
+          "function": "input only / ADC (VP)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GPIO39",
+          "function": "input only / ADC (VN)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "GPIO21",
+            "function": "SDA"
+          },
+          {
+            "pin": "GPIO22",
+            "function": "SCL"
+          }
+        ],
+        "SPI": [
+          {
+            "pin": "GPIO18",
+            "function": "SCLK"
+          },
+          {
+            "pin": "GPIO19",
+            "function": "MISO"
+          },
+          {
+            "pin": "GPIO23",
+            "function": "MOSI"
+          },
+          {
+            "pin": "GPIO5",
+            "function": "SS"
+          }
+        ],
+        "UART": [
+          {
+            "pin": "GPIO1",
+            "function": "TX0"
+          },
+          {
+            "pin": "GPIO3",
+            "function": "RX0"
+          }
+        ]
+      },
+      "notes": "3.3V logic, NOT 5V tolerant. GPIO34-39 are input-only. Most pins support PWM; ADC measuring 0-3.3V."
+    },
+    {
+      "component_id": "esp8266",
+      "component_name": "ESP8266",
+      "pin_count": 30,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "3V3",
+          "VIN"
+        ],
+        "gnd_pins": [
+          "GND",
+          "GND",
+          "GND"
+        ],
+        "voltage_min": 3.0,
+        "voltage_max": 5.5,
+        "notes": "VIN accepts 5V, onboard regulator outputs 3V3. GPIO are 3.3V logic."
+      },
+      "pins": [
+        {
+          "pin": "VIN",
+          "function": "5V power input / USB",
+          "direction": "power",
+          "voltage_min": 4.5,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "3V3",
+          "function": "regulated 3.3V supply output",
+          "direction": "power",
+          "voltage_min": 3.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "EN",
+          "function": "enable / reset (pull high, active low)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "RST",
+          "function": "reset (active low)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "TXD",
+          "function": "UART TX (GPIO1)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "RXD",
+          "function": "UART RX (GPIO3)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "A0",
+          "function": "analog ADC input (0-3.3V)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "D0",
+          "function": "GPIO16 / digital IO (no PWM/ADC)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "D1",
+          "function": "GPIO5 / I2C SCL / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "D2",
+          "function": "GPIO4 / I2C SDA / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "D3",
+          "function": "GPIO0 / boot strapping / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "D4",
+          "function": "GPIO2 / onboard LED / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "D5",
+          "function": "GPIO14 / SPI SCLK / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "D6",
+          "function": "GPIO12 / SPI MISO / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "D7",
+          "function": "GPIO13 / SPI MOSI / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "D8",
+          "function": "GPIO15 / SPI SS / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "D1",
+            "function": "SCL"
+          },
+          {
+            "pin": "D2",
+            "function": "SDA"
+          }
+        ],
+        "SPI": [
+          {
+            "pin": "D5",
+            "function": "SCLK"
+          },
+          {
+            "pin": "D6",
+            "function": "MISO"
+          },
+          {
+            "pin": "D7",
+            "function": "MOSI"
+          },
+          {
+            "pin": "D8",
+            "function": "SS"
+          }
+        ],
+        "UART": [
+          {
+            "pin": "TXD",
+            "function": "TX"
+          },
+          {
+            "pin": "RXD",
+            "function": "RX"
+          }
+        ]
+      },
+      "notes": "3.3V logic, NOT 5V tolerant. GPIO6-11 are used by flash, unavailable. D3/D4/D8 are boot-strapping pins."
+    },
+    {
+      "component_id": "arduino_uno",
+      "component_name": "Arduino Uno",
+      "pin_count": 20,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "5V",
+          "3V3",
+          "VIN"
+        ],
+        "gnd_pins": [
+          "GND",
+          "GND",
+          "GND"
+        ],
+        "voltage_min": 6.0,
+        "voltage_max": 20.0,
+        "notes": "VIN accepts 7-12V recommended; regulator outputs 5V and 3V3."
+      },
+      "pins": [
+        {
+          "pin": "VIN",
+          "function": "external DC input 7-12V (regulated to 5V)",
+          "direction": "power",
+          "voltage_min": 6.0,
+          "voltage_max": 20.0
+        },
+        {
+          "pin": "5V",
+          "function": "regulated 5V supply output",
+          "direction": "power",
+          "voltage_min": 4.8,
+          "voltage_max": 5.2
+        },
+        {
+          "pin": "3V3",
+          "function": "regulated 3.3V supply output (50mA max)",
+          "direction": "power",
+          "voltage_min": 3.2,
+          "voltage_max": 3.4
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "IOREF",
+          "function": "reference of the logic level (5V)",
+          "direction": "power",
+          "voltage_min": 4.8,
+          "voltage_max": 5.2
+        },
+        {
+          "pin": "RESET",
+          "function": "reset (active low)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D0",
+          "function": "UART RX / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D1",
+          "function": "UART TX / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D2",
+          "function": "digital IO / interrupt",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D3",
+          "function": "digital IO / PWM / interrupt",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D4",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D5",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D6",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D7",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D8",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D9",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D10",
+          "function": "SPI SS / digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D11",
+          "function": "SPI MOSI / digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D12",
+          "function": "SPI MISO / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D13",
+          "function": "SPI SCK / digital IO / onboard LED",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A0",
+          "function": "analog input 0-5V / digital IO",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A1",
+          "function": "analog input 0-5V / digital IO",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A2",
+          "function": "analog input 0-5V / digital IO",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A3",
+          "function": "analog input 0-5V / digital IO",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A4",
+          "function": "I2C SDA / analog input",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A5",
+          "function": "I2C SCL / analog input",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "A4",
+            "function": "SDA"
+          },
+          {
+            "pin": "A5",
+            "function": "SCL"
+          }
+        ],
+        "SPI": [
+          {
+            "pin": "D13",
+            "function": "SCK"
+          },
+          {
+            "pin": "D12",
+            "function": "MISO"
+          },
+          {
+            "pin": "D11",
+            "function": "MOSI"
+          },
+          {
+            "pin": "D10",
+            "function": "SS"
+          }
+        ],
+        "UART": [
+          {
+            "pin": "D0",
+            "function": "RX"
+          },
+          {
+            "pin": "D1",
+            "function": "TX"
+          }
+        ]
+      },
+      "notes": "5V logic. PWM on D3,5,6,9,10,11. Analog inputs measure 0-5V (10-bit ADC)."
+    },
+    {
+      "component_id": "arduino_nano",
+      "component_name": "Arduino Nano",
+      "pin_count": 22,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "5V",
+          "3V3",
+          "VIN"
+        ],
+        "gnd_pins": [
+          "GND",
+          "GND"
+        ],
+        "voltage_min": 7.0,
+        "voltage_max": 12.0,
+        "notes": "VIN 7-12V; regulator outputs 5V and 3V3. 5V also usable via USB/pin."
+      },
+      "pins": [
+        {
+          "pin": "VIN",
+          "function": "external DC input 7-12V",
+          "direction": "power",
+          "voltage_min": 7.0,
+          "voltage_max": 12.0
+        },
+        {
+          "pin": "5V",
+          "function": "regulated 5V supply output",
+          "direction": "power",
+          "voltage_min": 4.8,
+          "voltage_max": 5.2
+        },
+        {
+          "pin": "3V3",
+          "function": "regulated 3.3V supply output (50mA max)",
+          "direction": "power",
+          "voltage_min": 3.2,
+          "voltage_max": 3.4
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "RST",
+          "function": "reset (active low)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "RX",
+          "function": "UART RX / digital IO (D0)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "TX",
+          "function": "UART TX / digital IO (D1)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D2",
+          "function": "digital IO / interrupt",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D3",
+          "function": "digital IO / PWM / interrupt",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D4",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D5",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D6",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D7",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D8",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D9",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D10",
+          "function": "SPI SS / digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D11",
+          "function": "SPI MOSI / digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D12",
+          "function": "SPI MISO / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D13",
+          "function": "SPI SCK / digital IO / LED",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A0",
+          "function": "analog input 0-5V",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A1",
+          "function": "analog input 0-5V",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A2",
+          "function": "analog input 0-5V",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A3",
+          "function": "analog input 0-5V",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A4",
+          "function": "I2C SDA / analog input",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A5",
+          "function": "I2C SCL / analog input",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A6",
+          "function": "analog input (ADC only, no digital)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A7",
+          "function": "analog input (ADC only, no digital)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "A4",
+            "function": "SDA"
+          },
+          {
+            "pin": "A5",
+            "function": "SCL"
+          }
+        ],
+        "SPI": [
+          {
+            "pin": "D13",
+            "function": "SCK"
+          },
+          {
+            "pin": "D12",
+            "function": "MISO"
+          },
+          {
+            "pin": "D11",
+            "function": "MOSI"
+          },
+          {
+            "pin": "D10",
+            "function": "SS"
+          }
+        ],
+        "UART": [
+          {
+            "pin": "RX",
+            "function": "RX"
+          },
+          {
+            "pin": "TX",
+            "function": "TX"
+          }
+        ]
+      },
+      "notes": "5V logic, same ATmega328P as Uno. PWM on D3,5,6,9,10,11."
+    },
+    {
+      "component_id": "arduino_mega",
+      "component_name": "Arduino Mega 2560",
+      "pin_count": 54,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "5V",
+          "3V3",
+          "VIN"
+        ],
+        "gnd_pins": [
+          "GND",
+          "GND",
+          "GND",
+          "GND"
+        ],
+        "voltage_min": 6.0,
+        "voltage_max": 20.0,
+        "notes": "VIN 7-12V recommended; outputs 5V and 3V3."
+      },
+      "pins": [
+        {
+          "pin": "VIN",
+          "function": "external DC input 7-12V",
+          "direction": "power",
+          "voltage_min": 6.0,
+          "voltage_max": 20.0
+        },
+        {
+          "pin": "5V",
+          "function": "regulated 5V supply output",
+          "direction": "power",
+          "voltage_min": 4.8,
+          "voltage_max": 5.2
+        },
+        {
+          "pin": "3V3",
+          "function": "regulated 3.3V supply output (50mA max)",
+          "direction": "power",
+          "voltage_min": 3.2,
+          "voltage_max": 3.4
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "IOREF",
+          "function": "logic level reference (5V)",
+          "direction": "power",
+          "voltage_min": 4.8,
+          "voltage_max": 5.2
+        },
+        {
+          "pin": "RESET",
+          "function": "reset (active low)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D0",
+          "function": "UART0 RX",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D1",
+          "function": "UART0 TX",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D2",
+          "function": "digital IO / interrupt",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D3",
+          "function": "digital IO / PWM / interrupt",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D4",
+          "function": "digital IO / interrupt",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D5",
+          "function": "digital IO / PWM / interrupt",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D6",
+          "function": "digital IO / PWM / interrupt",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D7",
+          "function": "digital IO / interrupt",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D8",
+          "function": "digital IO / interrupt",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D9",
+          "function": "digital IO / PWM / interrupt",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D10",
+          "function": "SPI SS / digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D11",
+          "function": "SPI MOSI / digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D12",
+          "function": "SPI MISO / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D13",
+          "function": "SPI SCK / digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D14",
+          "function": "UART3 TX / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D15",
+          "function": "UART3 RX / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D16",
+          "function": "UART2 TX / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D17",
+          "function": "UART2 RX / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D18",
+          "function": "UART1 TX / I2C SDA / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D19",
+          "function": "UART1 RX / I2C SCL / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D20",
+          "function": "I2C SDA / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D21",
+          "function": "I2C SCL / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D22-D53",
+          "function": "general purpose digital IO (32 pins)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D44",
+          "function": "PWM / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D45",
+          "function": "PWM / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D46",
+          "function": "PWM / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D50",
+          "function": "SPI MISO / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D51",
+          "function": "SPI MOSI / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D52",
+          "function": "SPI SCK / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "D53",
+          "function": "SPI SS / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A0",
+          "function": "analog input 0-5V (12+ channels A0-A15)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "D20",
+            "function": "SDA"
+          },
+          {
+            "pin": "D21",
+            "function": "SCL"
+          }
+        ],
+        "SPI": [
+          {
+            "pin": "D52",
+            "function": "SCK"
+          },
+          {
+            "pin": "D50",
+            "function": "MISO"
+          },
+          {
+            "pin": "D51",
+            "function": "MOSI"
+          },
+          {
+            "pin": "D53",
+            "function": "SS"
+          }
+        ],
+        "UART": [
+          {
+            "pin": "D0",
+            "function": "RX0"
+          },
+          {
+            "pin": "D1",
+            "function": "TX0"
+          },
+          {
+            "pin": "D19",
+            "function": "RX1"
+          },
+          {
+            "pin": "D18",
+            "function": "TX1"
+          },
+          {
+            "pin": "D17",
+            "function": "RX2"
+          },
+          {
+            "pin": "D16",
+            "function": "TX2"
+          },
+          {
+            "pin": "D15",
+            "function": "RX3"
+          },
+          {
+            "pin": "D14",
+            "function": "TX3"
+          }
+        ]
+      },
+      "notes": "5V logic. 54 digital IO (D0-D53), 16 analog (A0-A15), 4 hardware UARTs, PWM on D2-D13 and D44-D46."
+    },
+    {
+      "component_id": "raspberry_pi_4",
+      "component_name": "Raspberry Pi 4",
+      "pin_count": 40,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "5V",
+          "5V",
+          "3V3",
+          "3V3"
+        ],
+        "gnd_pins": [
+          "GND",
+          "GND",
+          "GND",
+          "GND",
+          "GND",
+          "GND",
+          "GND",
+          "GND"
+        ],
+        "voltage_min": 4.5,
+        "voltage_max": 5.2,
+        "notes": "5V from USB-C power input available on header pins 2/4; 3V3 from onboard regulator."
+      },
+      "pins": [
+        {
+          "pin": "Pin1 3V3",
+          "function": "3.3V supply",
+          "direction": "power",
+          "voltage_min": 3.25,
+          "voltage_max": 3.35
+        },
+        {
+          "pin": "Pin2 5V",
+          "function": "5V supply (from power input)",
+          "direction": "power",
+          "voltage_min": 4.5,
+          "voltage_max": 5.2
+        },
+        {
+          "pin": "Pin3 GPIO2",
+          "function": "I2C SDA / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin4 5V",
+          "function": "5V supply",
+          "direction": "power",
+          "voltage_min": 4.5,
+          "voltage_max": 5.2
+        },
+        {
+          "pin": "Pin5 GPIO3",
+          "function": "I2C SCL / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin6 GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "Pin7 GPIO4",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin8 GPIO14",
+          "function": "UART TXD / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin9 GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "Pin10 GPIO15",
+          "function": "UART RXD / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin11 GPIO17",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin12 GPIO18",
+          "function": "digital IO / PCM_CLK / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin13 GPIO27",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin14 GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "Pin15 GPIO22",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin16 GPIO23",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin17 3V3",
+          "function": "3.3V supply",
+          "direction": "power",
+          "voltage_min": 3.25,
+          "voltage_max": 3.35
+        },
+        {
+          "pin": "Pin18 GPIO24",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin19 GPIO10",
+          "function": "SPI0 MOSI / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin20 GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "Pin21 GPIO9",
+          "function": "SPI0 MISO / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin22 GPIO25",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin23 GPIO11",
+          "function": "SPI0 SCLK / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin24 GPIO8",
+          "function": "SPI0 CE0 / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin25 GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "Pin26 GPIO7",
+          "function": "SPI0 CE1 / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin27 GPIO0",
+          "function": "ID_SD (I2C EEPROM) / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin28 GPIO1",
+          "function": "ID_SC (I2C EEPROM) / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin29 GPIO5",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin30 GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "Pin31 GPIO6",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin32 GPIO12",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin33 GPIO13",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin34 GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "Pin35 GPIO19",
+          "function": "digital IO / SPI1 MOSI",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin36 GPIO16",
+          "function": "digital IO / SPI1 CE2",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin37 GPIO26",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin38 GPIO20",
+          "function": "digital IO / SPI1 MISO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin39 GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "Pin40 GPIO21",
+          "function": "digital IO / SPI1 SCLK",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "Pin3",
+            "function": "SDA"
+          },
+          {
+            "pin": "Pin5",
+            "function": "SCL"
+          }
+        ],
+        "SPI": [
+          {
+            "pin": "Pin23",
+            "function": "SCLK"
+          },
+          {
+            "pin": "Pin21",
+            "function": "MISO"
+          },
+          {
+            "pin": "Pin19",
+            "function": "MOSI"
+          },
+          {
+            "pin": "Pin24",
+            "function": "CE0"
+          },
+          {
+            "pin": "Pin26",
+            "function": "CE1"
+          }
+        ],
+        "UART": [
+          {
+            "pin": "Pin8",
+            "function": "TXD"
+          },
+          {
+            "pin": "Pin10",
+            "function": "RXD"
+          }
+        ]
+      },
+      "notes": "40-pin header, 3.3V logic only (NOT 5V tolerant). GPIO0/1 reserved for HAT EEPROM. Same header layout as Raspberry Pi Zero 2 W."
+    },
+    {
+      "component_id": "raspberry_pi_zero_2w",
+      "component_name": "Raspberry Pi Zero 2 W",
+      "pin_count": 40,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "5V",
+          "5V",
+          "3V3",
+          "3V3"
+        ],
+        "gnd_pins": [
+          "GND",
+          "GND",
+          "GND",
+          "GND",
+          "GND",
+          "GND",
+          "GND",
+          "GND"
+        ],
+        "voltage_min": 4.5,
+        "voltage_max": 5.2,
+        "notes": "5V from micro-USB power. Same 40-pin header as Raspberry Pi 4."
+      },
+      "pins": [
+        {
+          "pin": "Pin1 3V3",
+          "function": "3.3V supply",
+          "direction": "power",
+          "voltage_min": 3.25,
+          "voltage_max": 3.35
+        },
+        {
+          "pin": "Pin2 5V",
+          "function": "5V supply",
+          "direction": "power",
+          "voltage_min": 4.5,
+          "voltage_max": 5.2
+        },
+        {
+          "pin": "Pin3 GPIO2",
+          "function": "I2C SDA / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin4 5V",
+          "function": "5V supply",
+          "direction": "power",
+          "voltage_min": 4.5,
+          "voltage_max": 5.2
+        },
+        {
+          "pin": "Pin5 GPIO3",
+          "function": "I2C SCL / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin6 GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "Pin7 GPIO4",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin8 GPIO14",
+          "function": "UART TXD / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin9 GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "Pin10 GPIO15",
+          "function": "UART RXD / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin11 GPIO17",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin12 GPIO18",
+          "function": "digital IO / PCM_CLK / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin13 GPIO27",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin14 GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "Pin15 GPIO22",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin16 GPIO23",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin17 3V3",
+          "function": "3.3V supply",
+          "direction": "power",
+          "voltage_min": 3.25,
+          "voltage_max": 3.35
+        },
+        {
+          "pin": "Pin18 GPIO24",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin19 GPIO10",
+          "function": "SPI0 MOSI / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin20 GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "Pin21 GPIO9",
+          "function": "SPI0 MISO / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin22 GPIO25",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin23 GPIO11",
+          "function": "SPI0 SCLK / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin24 GPIO8",
+          "function": "SPI0 CE0 / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin25 GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "Pin26 GPIO7",
+          "function": "SPI0 CE1 / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin27 GPIO0",
+          "function": "ID_SD (I2C EEPROM) / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin28 GPIO1",
+          "function": "ID_SC (I2C EEPROM) / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin29 GPIO5",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin30 GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "Pin31 GPIO6",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin32 GPIO12",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin33 GPIO13",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin34 GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "Pin35 GPIO19",
+          "function": "digital IO / SPI1 MOSI",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin36 GPIO16",
+          "function": "digital IO / SPI1 CE2",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin37 GPIO26",
+          "function": "digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin38 GPIO20",
+          "function": "digital IO / SPI1 MISO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "Pin39 GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "Pin40 GPIO21",
+          "function": "digital IO / SPI1 SCLK",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "Pin3",
+            "function": "SDA"
+          },
+          {
+            "pin": "Pin5",
+            "function": "SCL"
+          }
+        ],
+        "SPI": [
+          {
+            "pin": "Pin23",
+            "function": "SCLK"
+          },
+          {
+            "pin": "Pin21",
+            "function": "MISO"
+          },
+          {
+            "pin": "Pin19",
+            "function": "MOSI"
+          },
+          {
+            "pin": "Pin24",
+            "function": "CE0"
+          },
+          {
+            "pin": "Pin26",
+            "function": "CE1"
+          }
+        ],
+        "UART": [
+          {
+            "pin": "Pin8",
+            "function": "TXD"
+          },
+          {
+            "pin": "Pin10",
+            "function": "RXD"
+          }
+        ]
+      },
+      "notes": "40-pin header, 3.3V logic only (NOT 5V tolerant). Identical pinout to Raspberry Pi 4."
+    },
+    {
+      "component_id": "raspberry_pi_pico",
+      "component_name": "Raspberry Pi Pico",
+      "pin_count": 40,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VBUS",
+          "VSYS",
+          "3V3",
+          "3V3_OUT"
+        ],
+        "gnd_pins": [
+          "GND",
+          "GND",
+          "GND",
+          "GND",
+          "GND",
+          "GND",
+          "GND",
+          "GND",
+          "AGND"
+        ],
+        "voltage_min": 1.8,
+        "voltage_max": 5.5,
+        "notes": "VBUS is 5V from USB; VSYS accepts 1.8-5.5V; 3V3_OUT is regulated 3.3V output (max 300mA)."
+      },
+      "pins": [
+        {
+          "pin": "GP0",
+          "function": "digital IO / UART0 TX / I2C0 SDA / PWM / ADC0",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP1",
+          "function": "digital IO / UART0 RX / I2C0 SCL / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP2",
+          "function": "digital IO / SPI0 SCK / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP3",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP4",
+          "function": "digital IO / I2C1 SDA / UART1 TX / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP5",
+          "function": "digital IO / I2C1 SCL / UART1 RX / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP6",
+          "function": "digital IO / SPI1 / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP7",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP8",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP9",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP10",
+          "function": "digital IO / SPI0 / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP11",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP12",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP13",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP14",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP15",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP16",
+          "function": "digital IO / SPI0 MISO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP17",
+          "function": "digital IO / SPI0 CS / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP18",
+          "function": "digital IO / SPI0 SCK / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP19",
+          "function": "digital IO / SPI0 MOSI / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP20",
+          "function": "digital IO / I2C0 SDA / UART1 TX / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP21",
+          "function": "digital IO / I2C0 SCL / UART1 RX / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP22",
+          "function": "digital IO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP26",
+          "function": "ADC0 / digital IO (ADC-capable)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP27",
+          "function": "ADC1 / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GP28",
+          "function": "ADC2 / digital IO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "RUN",
+          "function": "reset (pull low to reset)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "VBUS",
+          "function": "5V USB input",
+          "direction": "power",
+          "voltage_min": 4.5,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "VSYS",
+          "function": "system power input 1.8-5.5V",
+          "direction": "power",
+          "voltage_min": 1.8,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "3V3",
+          "function": "regulated 3.3V rail (out)",
+          "direction": "power",
+          "voltage_min": 3.0,
+          "voltage_max": 3.4
+        },
+        {
+          "pin": "3V3_OUT",
+          "function": "3.3V output (max 300mA)",
+          "direction": "power",
+          "voltage_min": 3.0,
+          "voltage_max": 3.4
+        },
+        {
+          "pin": "3V3_EN",
+          "function": "3.3V regulator enable (keep high; low disables 3V3)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "ADC_VREF",
+          "function": "ADC voltage reference (3.3V) bypass/filter pin",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "AGND",
+          "function": "analog ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "GP0",
+            "function": "I2C0 SDA"
+          },
+          {
+            "pin": "GP1",
+            "function": "I2C0 SCL"
+          },
+          {
+            "pin": "GP20",
+            "function": "I2C0 SDA (alt)"
+          },
+          {
+            "pin": "GP21",
+            "function": "I2C0 SCL (alt)"
+          }
+        ],
+        "SPI": [
+          {
+            "pin": "GP18",
+            "function": "SPI0 SCK"
+          },
+          {
+            "pin": "GP16",
+            "function": "SPI0 MISO"
+          },
+          {
+            "pin": "GP19",
+            "function": "SPI0 MOSI"
+          },
+          {
+            "pin": "GP17",
+            "function": "SPI0 CS"
+          }
+        ],
+        "UART": [
+          {
+            "pin": "GP0",
+            "function": "UART0 TX"
+          },
+          {
+            "pin": "GP1",
+            "function": "UART0 RX"
+          },
+          {
+            "pin": "GP4",
+            "function": "UART1 TX"
+          },
+          {
+            "pin": "GP5",
+            "function": "UART1 RX"
+          }
+        ]
+      },
+      "notes": "3.3V logic, NOT 5V tolerant. ADC 0-3.3V (12-bit). GP23-GP25 unavailable on standard Pico.",
+      "interfaces_alt_note": "Most GP pins can be re-mapped to I2C/SPI/UART in firmware."
+    },
+    {
+      "component_id": "stm32f103",
+      "component_name": "STM32F103C8T6",
+      "pin_count": 40,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "3V3",
+          "5V",
+          "VDD",
+          "VDDA"
+        ],
+        "gnd_pins": [
+          "GND",
+          "GND",
+          "GND",
+          "GND"
+        ],
+        "voltage_min": 2.0,
+        "voltage_max": 3.6,
+        "notes": "Blue Pill board: 5V input (USB/VIN) regulated to 3V3; MCU core runs at 3.3V."
+      },
+      "pins": [
+        {
+          "pin": "3V3",
+          "function": "regulated 3.3V rail (out/in)",
+          "direction": "power",
+          "voltage_min": 3.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "5V",
+          "function": "5V input (USB/VIN)",
+          "direction": "power",
+          "voltage_min": 4.5,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "VDDA",
+          "function": "analog supply 3.3V",
+          "direction": "power",
+          "voltage_min": 3.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "VDD",
+          "function": "core supply 3.3V",
+          "direction": "power",
+          "voltage_min": 3.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "BOOT0",
+          "function": "boot strap (low=flash, high=system bootloader)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "NRST",
+          "function": "reset (active low)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PA0",
+          "function": "GPIO / ADC / TIM PWM / WKUP",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PA1",
+          "function": "GPIO / ADC / TIM PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PA2",
+          "function": "USART2 TX / GPIO / ADC",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PA3",
+          "function": "USART2 RX / GPIO / ADC",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PA4",
+          "function": "SPI1 NSS / GPIO / ADC",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PA5",
+          "function": "SPI1 SCK / GPIO / DAC / ADC",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PA6",
+          "function": "SPI1 MISO / GPIO / ADC",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PA7",
+          "function": "SPI1 MOSI / GPIO / ADC / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PA8",
+          "function": "GPIO / TIM PWM / USB",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PA9",
+          "function": "USART1 TX / GPIO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PA10",
+          "function": "USART1 RX / GPIO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PA11",
+          "function": "USB DM / GPIO / USART1 CTS",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PA12",
+          "function": "USB DP / GPIO / USART1 RTS",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PA13",
+          "function": "SWDIO / GPIO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PA14",
+          "function": "SWCLK / GPIO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PA15",
+          "function": "JTDI / GPIO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PB0",
+          "function": "GPIO / ADC / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PB1",
+          "function": "GPIO / ADC / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PB2",
+          "function": "GPIO / BOOT1 (strapping)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PB3",
+          "function": "JTDO / GPIO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PB4",
+          "function": "NJTRST / GPIO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PB5",
+          "function": "GPIO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PB6",
+          "function": "I2C1 SCL / GPIO / USART1 TX / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PB7",
+          "function": "I2C1 SDA / GPIO / USART1 RX / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PB8",
+          "function": "CAN RX / GPIO / I2C1 SCL / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PB9",
+          "function": "CAN TX / GPIO / I2C1 SDA / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PB10",
+          "function": "I2C2 SCL / USART3 TX / GPIO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PB11",
+          "function": "I2C2 SDA / USART3 RX / GPIO",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PB12",
+          "function": "SPI2 NSS / GPIO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PB13",
+          "function": "SPI2 SCK / GPIO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PB14",
+          "function": "SPI2 MISO / GPIO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PB15",
+          "function": "SPI2 MOSI / GPIO / PWM",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PC13",
+          "function": "GPIO / RTC (often onboard LED)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PC14",
+          "function": "GPIO / RTC osc",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "PC15",
+          "function": "GPIO / RTC osc",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "PB6",
+            "function": "SCL"
+          },
+          {
+            "pin": "PB7",
+            "function": "SDA"
+          }
+        ],
+        "SPI": [
+          {
+            "pin": "PA5",
+            "function": "SCK"
+          },
+          {
+            "pin": "PA6",
+            "function": "MISO"
+          },
+          {
+            "pin": "PA7",
+            "function": "MOSI"
+          },
+          {
+            "pin": "PA4",
+            "function": "NSS"
+          }
+        ],
+        "UART": [
+          {
+            "pin": "PA9",
+            "function": "USART1 TX"
+          },
+          {
+            "pin": "PA10",
+            "function": "USART1 RX"
+          },
+          {
+            "pin": "PA2",
+            "function": "USART2 TX"
+          },
+          {
+            "pin": "PA3",
+            "function": "USART2 RX"
+          }
+        ]
+      },
+      "notes": "3.3V logic (many pins 5V-tolerant). Analog inputs 0-3.3V. ADC1 on PA0-PA7, PB0, PB1. Common 'Blue Pill' board layout."
+    }
+  ]
+}

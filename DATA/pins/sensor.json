@@ -1,0 +1,1175 @@
+{
+  "type": "sensor",
+  "components": [
+    {
+      "component_id": "dht11",
+      "component_name": "DHT11",
+      "pin_count": 4,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "VCC",
+          "VDD"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 3.3,
+        "voltage_max": 5.5,
+        "notes": "Single-wire digital sensor; works at 3.3V and 5V."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 3.3-5.5V",
+          "direction": "power",
+          "voltage_min": 3.3,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "DATA",
+          "function": "single-wire digital data (bidirectional, requires external 10k pull-up to VCC)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "NC",
+          "function": "not connected",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "Requires 4.7-10k pull-up resistor on DATA. Humidity 20-90%, temp 0-50C."
+    },
+    {
+      "component_id": "dht22",
+      "component_name": "DHT22",
+      "pin_count": 4,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "VCC",
+          "VDD"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 3.3,
+        "voltage_max": 6.0,
+        "notes": "Single-wire digital sensor; wider range/higher accuracy than DHT11."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 3.3-6V",
+          "direction": "power",
+          "voltage_min": 3.3,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "DATA",
+          "function": "single-wire digital data (bidirectional, requires external 10k pull-up to VCC)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "NC",
+          "function": "not connected",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "Requires 4.7-10k pull-up on DATA. Humidity 0-100%, temp -40..80C."
+    },
+    {
+      "component_id": "bme280",
+      "component_name": "BME280",
+      "pin_count": 6,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VIN",
+          "VDD"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 1.8,
+        "voltage_max": 3.6,
+        "notes": "Breakout modules: VIN 3.3V typical (some boards have 3.3-5V tolerant regulators)."
+      },
+      "pins": [
+        {
+          "pin": "VIN",
+          "function": "supply (3.3V typical)",
+          "direction": "power",
+          "voltage_min": 1.8,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "SCL",
+          "function": "I2C clock / SPI SCK",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "SDA",
+          "function": "I2C data / SPI SDI",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "CSB",
+          "function": "chip select (I2C: tie high/MOSI ; SPI CS, active low)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "SDO",
+          "function": "address select / SPI MISO (low=0x76, high/float=0x77)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "SDA",
+            "function": "SDA"
+          },
+          {
+            "pin": "SCL",
+            "function": "SCL"
+          }
+        ],
+        "SPI": [
+          {
+            "pin": "SCK",
+            "function": "SCK"
+          },
+          {
+            "pin": "SDI",
+            "function": "MOSI"
+          },
+          {
+            "pin": "SDO",
+            "function": "MISO"
+          },
+          {
+            "pin": "CSB",
+            "function": "CS"
+          }
+        ]
+      },
+      "notes": "T/H/P sensor. I2C address 0x76 (SDO low) or 0x77. 3.3V logic."
+    },
+    {
+      "component_id": "bmp280",
+      "component_name": "BMP280",
+      "pin_count": 6,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VIN",
+          "VDD"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 1.8,
+        "voltage_max": 3.6,
+        "notes": "Breakout: 3.3V typical."
+      },
+      "pins": [
+        {
+          "pin": "VIN",
+          "function": "supply (3.3V typical)",
+          "direction": "power",
+          "voltage_min": 1.8,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "SCL",
+          "function": "I2C clock / SPI SCK",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "SDA",
+          "function": "I2C data / SPI SDI",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "CSB",
+          "function": "chip select (I2C: tie high; SPI CS active low)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "SDO",
+          "function": "address select / SPI MISO (low=0x76, high=0x77)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "SDA",
+            "function": "SDA"
+          },
+          {
+            "pin": "SCL",
+            "function": "SCL"
+          }
+        ]
+      },
+      "notes": "Pressure + temperature. I2C address 0x76/0x77."
+    },
+    {
+      "component_id": "mpu6050",
+      "component_name": "MPU6050",
+      "pin_count": 8,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VCC",
+          "VDD"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 2.37,
+        "voltage_max": 3.46,
+        "notes": "3.3V logic and supply (many breakouts tolerate 5V VIN via regulator)."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 2.37-3.46V (3.3V)",
+          "direction": "power",
+          "voltage_min": 2.37,
+          "voltage_max": 3.46
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "SCL",
+          "function": "I2C clock",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.46
+        },
+        {
+          "pin": "SDA",
+          "function": "I2C data",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.46
+        },
+        {
+          "pin": "ADO",
+          "function": "address select (low=0x68, high=0x69)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.46
+        },
+        {
+          "pin": "XDA",
+          "function": "aux I2C data (external magnetometer)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.46
+        },
+        {
+          "pin": "XCL",
+          "function": "aux I2C clock",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.46
+        },
+        {
+          "pin": "INT",
+          "function": "interrupt output (open drain)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.46
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "SDA",
+            "function": "SDA"
+          },
+          {
+            "pin": "SCL",
+            "function": "SCL"
+          }
+        ]
+      },
+      "notes": "6-axis IMU (accel+gyro). I2C address 0x68. Pull INT up if used."
+    },
+    {
+      "component_id": "mpu9250",
+      "component_name": "MPU9250",
+      "pin_count": 9,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VCC",
+          "VDD"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 2.4,
+        "voltage_max": 3.46,
+        "notes": "3.3V supply and logic. Most modules are 3.3V only."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 2.4-3.46V (3.3V)",
+          "direction": "power",
+          "voltage_min": 2.4,
+          "voltage_max": 3.46
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "SCL",
+          "function": "I2C clock / SPI SCK",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.46
+        },
+        {
+          "pin": "SDA",
+          "function": "I2C data / SPI MOSI",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.46
+        },
+        {
+          "pin": "ADO",
+          "function": "I2C address select (low=0x68, high=0x69)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.46
+        },
+        {
+          "pin": "NCS",
+          "function": "SPI chip select (I2C: tie high)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.46
+        },
+        {
+          "pin": "FSYNC",
+          "function": "frame sync (optional, tie to GND if unused)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.46
+        },
+        {
+          "pin": "INT",
+          "function": "interrupt output",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.46
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "SDA",
+            "function": "SDA"
+          },
+          {
+            "pin": "SCL",
+            "function": "SCL"
+          }
+        ],
+        "SPI": [
+          {
+            "pin": "SCL",
+            "function": "SCK"
+          },
+          {
+            "pin": "NCS",
+            "function": "CS"
+          },
+          {
+            "pin": "SDA",
+            "function": "MOSI"
+          },
+          {
+            "pin": "ADO",
+            "function": "MISO"
+          }
+        ]
+      },
+      "notes": "9-axis IMU (accel+gyro+mag via aux I2C). I2C address 0x68."
+    },
+    {
+      "component_id": "hc_sr04",
+      "component_name": "HC-SR04",
+      "pin_count": 4,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 4.5,
+        "voltage_max": 5.5,
+        "notes": "5V supply required. ECHO output is 5V."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 5V",
+          "direction": "power",
+          "voltage_min": 4.5,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "TRIG",
+          "function": "trigger input (10us pulse to start ping)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "ECHO",
+          "function": "echo output (5V TTL while ping returns)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "For 3.3V MCUs, use a voltage divider (e.g. 1k/2k) or level shifter on ECHO. Max 4m range."
+    },
+    {
+      "component_id": "pir_hcsr501",
+      "component_name": "HC-SR501 PIR",
+      "pin_count": 3,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 4.5,
+        "voltage_max": 20.0,
+        "notes": "Broad 5-12V supply; output is 3.3V high-level."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 5-20V",
+          "direction": "power",
+          "voltage_min": 4.5,
+          "voltage_max": 20.0
+        },
+        {
+          "pin": "OUT",
+          "function": "digital output (3.3V high on motion)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "Two onboard trimpots adjust sensitivity and hold-on delay. Retrigger selectable via jumper."
+    },
+    {
+      "component_id": "ldr",
+      "component_name": "LDR",
+      "pin_count": 2,
+      "logic_level": null,
+      "power": {
+        "vcc_pins": [],
+        "gnd_pins": [],
+        "voltage_min": 0.0,
+        "voltage_max": 100.0,
+        "notes": "Passive resistor; no polarity. Must be wired in a voltage divider with a fixed resistor (e.g. 10k)."
+      },
+      "pins": [
+        {
+          "pin": "Terminal 1",
+          "function": "photoresistor leg 1 (connect to VCC rail and junction to MCU ADC via 10k divider)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "Terminal 2",
+          "function": "photoresistor leg 2 (connect to GND via series resistor)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        }
+      ],
+      "interfaces": {},
+      "notes": "Resistance drops in bright light (~1k) and rises in dark (~100k-1M). Use 10k divider to 0-5V/3.3V ADC."
+    },
+    {
+      "component_id": "bh1750",
+      "component_name": "BH1750",
+      "pin_count": 5,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 3.0,
+        "voltage_max": 5.0,
+        "notes": "Breakout modules accept 3.3-5V supply; logic is 3.3V (5V-tolerant pull-up friendly)."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 3-5V",
+          "direction": "power",
+          "voltage_min": 3.0,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "SCL",
+          "function": "I2C clock",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "SDA",
+          "function": "I2C data",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "ADDR",
+          "function": "address select (low=0x23, high=0x5C)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "SDA",
+            "function": "SDA"
+          },
+          {
+            "pin": "SCL",
+            "function": "SCL"
+          }
+        ]
+      },
+      "notes": "Ambient light in lux, I2C. Address 0x23 (ADDR low) or 0x5C (ADDR high)."
+    },
+    {
+      "component_id": "mq2",
+      "component_name": "MQ-2",
+      "pin_count": 4,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 4.0,
+        "voltage_max": 5.5,
+        "notes": "Module supply 5V; internal heater and comparator."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 5V",
+          "direction": "power",
+          "voltage_min": 4.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "DO",
+          "function": "digital output (comparator, threshold adjustable via trimpot, 5V high)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "AO",
+          "function": "analog output (0-5V proportional to gas)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "Requires warm-up time. For 3.3V ADC, use divider or ADS1115. Detects LPG, methane, smoke."
+    },
+    {
+      "component_id": "mq135",
+      "component_name": "MQ-135",
+      "pin_count": 4,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 4.0,
+        "voltage_max": 5.5,
+        "notes": "Module supply 5V."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 5V",
+          "direction": "power",
+          "voltage_min": 4.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "DO",
+          "function": "digital output (comparator, 5V high)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "AO",
+          "function": "analog output (0-5V)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "Requires warm-up time. Detects NH3, NOx, benzene, smoke, CO2."
+    },
+    {
+      "component_id": "soil_moisture",
+      "component_name": "Soil Moisture Sensor",
+      "pin_count": 4,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 3.3,
+        "voltage_max": 5.0,
+        "notes": "Module supply 3.3-5V; comparator and both analog+digital outputs."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 3.3-5V",
+          "direction": "power",
+          "voltage_min": 3.3,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "DO",
+          "function": "digital output (threshold via trimpot)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "AO",
+          "function": "analog output (~0-4.2V, higher=wetter)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 4.2
+        }
+      ],
+      "interfaces": {},
+      "notes": "Probe forks connect via 2-wire header. Deep moisture reading helps avoid probe corrosion."
+    },
+    {
+      "component_id": "rain_sensor",
+      "component_name": "Rain Sensor",
+      "pin_count": 4,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 3.3,
+        "voltage_max": 5.0,
+        "notes": "Module supply 3.3-5V."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 3.3-5V",
+          "direction": "power",
+          "voltage_min": 3.3,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "DO",
+          "function": "digital output (threshold via trimpot)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "AO",
+          "function": "analog output (lower voltage when wet)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "Rain board connects via 2-wire header. Sense when AO drops below threshold."
+    },
+    {
+      "component_id": "flame_sensor",
+      "component_name": "Flame Sensor",
+      "pin_count": 4,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 3.3,
+        "voltage_max": 5.0,
+        "notes": "Module supply 3.3-5V."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 3.3-5V",
+          "direction": "power",
+          "voltage_min": 3.3,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "DO",
+          "function": "digital output (comparator, threshold via trimpot)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "AO",
+          "function": "analog output (0-5V)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "IR flame detection; sensitive to sun/heat sources. Analog output higher in brighter IR."
+    },
+    {
+      "component_id": "ir_obstacle",
+      "component_name": "IR Obstacle Sensor",
+      "pin_count": 3,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 3.3,
+        "voltage_max": 5.0,
+        "notes": "Module supply 3.3-5V."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 3.3-5V",
+          "direction": "power",
+          "voltage_min": 3.3,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "OUT",
+          "function": "digital output (0V when obstacle detected, else high; adjustable via trimpot)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "Active-low digital output on most boards."
+    },
+    {
+      "component_id": "neo6m",
+      "component_name": "NEO-6M GPS",
+      "pin_count": 4,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 2.7,
+        "voltage_max": 3.6,
+        "notes": "GPS module runs at 3.3V; many breakouts accept 5V VIN via onboard regulator and are 5V-tolerant on RX/TX."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 2.7-3.6V (3.3V typical)",
+          "direction": "power",
+          "voltage_min": 2.7,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "TX",
+          "function": "UART TX (NMEA 9600 baud default, 3.3V)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "RX",
+          "function": "UART RX (3.3V level; 5V-tolerant on many modules)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        }
+      ],
+      "interfaces": {
+        "UART": [
+          {
+            "pin": "TX",
+            "function": "TX"
+          },
+          {
+            "pin": "RX",
+            "function": "RX"
+          }
+        ]
+      },
+      "notes": "Optional V-BACKUP (coin cell) and PPS pins on some boards. NMEA sentences via UART at 9600."
+    },
+    {
+      "component_id": "max30102",
+      "component_name": "MAX30102",
+      "pin_count": 6,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VIN",
+          "VDD"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 1.8,
+        "voltage_max": 3.3,
+        "notes": "3.3V supply (not 5V tolerant)."
+      },
+      "pins": [
+        {
+          "pin": "VIN",
+          "function": "supply 1.8-3.3V (3.3V typical)",
+          "direction": "power",
+          "voltage_min": 1.8,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "SCL",
+          "function": "I2C clock",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "SDA",
+          "function": "I2C data",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        },
+        {
+          "pin": "INT",
+          "function": "interrupt output (open drain, active low)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.3
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "SDA",
+            "function": "SDA"
+          },
+          {
+            "pin": "SCL",
+            "function": "SCL"
+          }
+        ]
+      },
+      "notes": "Heart rate/SpO2 sensor, I2C address 0x57. Needs good skin contact; integrate samples."
+    },
+    {
+      "component_id": "ads1115",
+      "component_name": "ADS1115",
+      "pin_count": 8,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VDD"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 2.0,
+        "voltage_max": 5.5,
+        "notes": "Supply 2-5.5V; logic levels follow VDD (3.3V or 5V)."
+      },
+      "pins": [
+        {
+          "pin": "VDD",
+          "function": "supply 2-5.5V",
+          "direction": "power",
+          "voltage_min": 2.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "SCL",
+          "function": "I2C clock",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "SDA",
+          "function": "I2C data",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "ADDR",
+          "function": "address select (low=0x48, vcc=0x49, sda=0x4A, scl=0x4B)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "ALRT",
+          "function": "alert/interrupt output (open drain, active low)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A0",
+          "function": "analog input 0 (differential or single-ended)",
+          "direction": "input",
+          "voltage_min": -6.144,
+          "voltage_max": 6.144
+        },
+        {
+          "pin": "A1",
+          "function": "analog input 1",
+          "direction": "input",
+          "voltage_min": -6.144,
+          "voltage_max": 6.144
+        },
+        {
+          "pin": "A2",
+          "function": "analog input 2",
+          "direction": "input",
+          "voltage_min": -6.144,
+          "voltage_max": 6.144
+        },
+        {
+          "pin": "A3",
+          "function": "analog input 3",
+          "direction": "input",
+          "voltage_min": -6.144,
+          "voltage_max": 6.144
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "SDA",
+            "function": "SDA"
+          },
+          {
+            "pin": "SCL",
+            "function": "SCL"
+          }
+        ]
+      },
+      "notes": "16-bit ADC, programmable gain up to +/-6.144V. I2C address 0x48-0x4B. Great for MQ/analog sensors on 3.3V MCUs."
+    }
+  ]
+}

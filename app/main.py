@@ -72,6 +72,7 @@ def query(request: QueryRequest):
 
         validation = final_output.get("validation", {})
         documents = final_output.get("documents", [])
+        wiring = final_output.get("wiring", {})
         return {
             "question": q,
             "answer": validation.get("system_valid", False),
@@ -79,6 +80,8 @@ def query(request: QueryRequest):
             "checks": validation.get("checks", []),
             "missing_requirements": validation.get("missing_requirements", []),
             "confidence": validation.get("confidence"),
+            "wiring": wiring,
+            "pin_layouts": final_output.get("pin_layouts", []),
             "requirements": final_output.get("requirements", {}),
             "thought_process": final_output.get("plan"),
             "status": final_output.get("status"),

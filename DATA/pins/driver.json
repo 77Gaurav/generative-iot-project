@@ -1,0 +1,433 @@
+{
+  "type": "driver",
+  "components": [
+    {
+      "component_id": "uln2003",
+      "component_name": "ULN2003",
+      "pin_count": 6,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 4.5,
+        "voltage_max": 5.5,
+        "notes": "Stepper driver module (ULN2003A): logic supply 5V; also feeds the motor coil common via VCC pin."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "logic + stepper coil supply (5V typical; feeds motor common through header)",
+          "direction": "power",
+          "voltage_min": 4.5,
+          "voltage_max": 12.0
+        },
+        {
+          "pin": "GND",
+          "function": "ground (shared with MCU)",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "IN1",
+          "function": "logic input 1 (drives motor coil A via output)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "IN2",
+          "function": "logic input 2 (coil B)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "IN3",
+          "function": "logic input 3 (coil C)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "IN4",
+          "function": "logic input 4 (coil D)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "OUT1-OUT4",
+          "function": "open-collector outputs to 28BYJ-48 coils (via onboard header)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 12.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "Darlington array, 500mA per channel. Use with 28BYJ-48 stepper. COM/flyback diodes on chip."
+    },
+    {
+      "component_id": "mcp23017",
+      "component_name": "MCP23017",
+      "pin_count": 28,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VDD"
+        ],
+        "gnd_pins": [
+          "VSS"
+        ],
+        "voltage_min": 1.8,
+        "voltage_max": 5.5,
+        "notes": "VDD 1.8-5.5V; I/O levels follow VDD (works at 3.3V or 5V)."
+      },
+      "pins": [
+        {
+          "pin": "VDD",
+          "function": "supply 1.8-5.5V",
+          "direction": "power",
+          "voltage_min": 1.8,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "VSS",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "SCL",
+          "function": "I2C clock",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "SDA",
+          "function": "I2C data",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A0",
+          "function": "address bit 0 (I2C addr 0x20 + A2A1A0)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A1",
+          "function": "address bit 1",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A2",
+          "function": "address bit 2",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "RESET",
+          "function": "reset (active low; tie high/VDD if unused)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "INTA",
+          "function": "interrupt A output (open drain, active low)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "INTB",
+          "function": "interrupt B output (open drain, active low)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GPA0",
+          "function": "GPIO port A bit 0",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GPA1",
+          "function": "GPIO port A bit 1",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GPA2",
+          "function": "GPIO port A bit 2",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GPA3",
+          "function": "GPIO port A bit 3",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GPA4",
+          "function": "GPIO port A bit 4",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GPA5",
+          "function": "GPIO port A bit 5",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GPA6",
+          "function": "GPIO port A bit 6",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GPA7",
+          "function": "GPIO port A bit 7",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GPB0",
+          "function": "GPIO port B bit 0",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GPB1",
+          "function": "GPIO port B bit 1",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GPB2",
+          "function": "GPIO port B bit 2",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GPB3",
+          "function": "GPIO port B bit 3",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GPB4",
+          "function": "GPIO port B bit 4",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GPB5",
+          "function": "GPIO port B bit 5",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GPB6",
+          "function": "GPIO port B bit 6",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GPB7",
+          "function": "GPIO port B bit 7",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "SDA",
+            "function": "SDA"
+          },
+          {
+            "pin": "SCL",
+            "function": "SCL"
+          }
+        ]
+      },
+      "notes": "16-bit I2C GPIO expander. Address 0x20 + (A2 A1 A0). Each pin sinks ~25mA / sources ~20mA."
+    },
+    {
+      "component_id": "pcf8574",
+      "component_name": "PCF8574",
+      "pin_count": 16,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VDD"
+        ],
+        "gnd_pins": [
+          "VSS"
+        ],
+        "voltage_min": 2.5,
+        "voltage_max": 6.0,
+        "notes": "VDD 2.5-6V; levels follow VDD."
+      },
+      "pins": [
+        {
+          "pin": "VDD",
+          "function": "supply 2.5-6V",
+          "direction": "power",
+          "voltage_min": 2.5,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "VSS",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "SCL",
+          "function": "I2C clock",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "SDA",
+          "function": "I2C data",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "A0",
+          "function": "address bit 0 (addr 0x20 + A2A1A0)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "A1",
+          "function": "address bit 1",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "A2",
+          "function": "address bit 2",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "INT",
+          "function": "interrupt output (active low, open drain)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "P0",
+          "function": "quasi-bidirectional IO bit 0",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "P1",
+          "function": "quasi-bidirectional IO bit 1 (pull-up built in)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "P2",
+          "function": "quasi-bidirectional IO bit 2",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "P3",
+          "function": "quasi-bidirectional IO bit 3",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "P4",
+          "function": "quasi-bidirectional IO bit 4",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "P5",
+          "function": "quasi-bidirectional IO bit 5",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "P6",
+          "function": "quasi-bidirectional IO bit 6",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "P7",
+          "function": "quasi-bidirectional IO bit 7",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "SDA",
+            "function": "SDA"
+          },
+          {
+            "pin": "SCL",
+            "function": "SCL"
+          }
+        ]
+      },
+      "notes": "8-bit I2C expander, quasi-bidirectional pins (weak pull-up). Address 0x20-0x27; PCF8574A variant is 0x38-0x3F."
+    }
+  ]
+}

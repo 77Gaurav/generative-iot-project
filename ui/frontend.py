@@ -78,6 +78,26 @@ if submitted:
         if confidence is not None:
             st.progress(float(confidence), text=f"Confidence: {confidence}")
 
+        wiring = data.get("wiring") or {}
+        if wiring.get("steps"):
+            st.divider()
+            st.subheader("🔌 Wiring plan (step-by-step)")
+            st.markdown(wiring.get("summary", ""))
+            for index, step in enumerate(wiring["steps"], start=1):
+                with st.container(border=True):
+                    st.markdown(f"**Step {index}**")
+                    st.markdown(step)
+            if wiring.get("warnings"):
+                st.markdown("**Warnings / things to watch:**")
+                for warning in wiring["warnings"]:
+                    st.caption(f"⚠️ {warning}")
+            wiring_conf = wiring.get("confidence")
+            if wiring_conf is not None:
+                st.progress(
+                    float(wiring_conf),
+                    text=f"Wiring confidence: {wiring_conf}",
+                )
+
     with st.expander("Detailed plan (requirements & sources)"):
         st.markdown("**Modified query (requirements)**")
         st.json(data.get("requirements"))
@@ -85,3 +105,6 @@ if submitted:
         st.write(data.get("thought_process"))
         st.markdown("**Retrieved component candidates**")
         st.json(data.get("sources", [])[:5])
+        if data.get("pin_layouts"):
+            st.markdown("**Pin layouts used for wiring**")
+            st.json(data["pin_layouts"])

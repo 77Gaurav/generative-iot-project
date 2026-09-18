@@ -1,0 +1,301 @@
+{
+  "type": "output",
+  "components": [
+    {
+      "component_id": "oled_ssd1306",
+      "component_name": "SSD1306 OLED",
+      "pin_count": 4,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 3.3,
+        "voltage_max": 5.0,
+        "notes": "I2C breakout: VCC 3.3V typical, works at 5V too; logic is 3.3V (pull-ups on module)."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 3.3-5V",
+          "direction": "power",
+          "voltage_min": 3.3,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "SCL",
+          "function": "I2C clock",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "SDA",
+          "function": "I2C data",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "SDA",
+            "function": "SDA"
+          },
+          {
+            "pin": "SCL",
+            "function": "SCL"
+          }
+        ]
+      },
+      "notes": "128x64 monochrome, I2C address 0x3C (some 0x3D). SPI variant adds CS/DC/RES pins."
+    },
+    {
+      "component_id": "lcd_16x2",
+      "component_name": "16x2 LCD",
+      "pin_count": 4,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 4.5,
+        "voltage_max": 5.5,
+        "notes": "With I2C backpack (PCF8574) module: VCC 5V (works at 3.3V for many)."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 5V (3.3V acceptable on many I2C versions)",
+          "direction": "power",
+          "voltage_min": 3.3,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "SDA",
+          "function": "I2C data (via backpack)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "SCL",
+          "function": "I2C clock (via backpack)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "SDA",
+            "function": "SDA"
+          },
+          {
+            "pin": "SCL",
+            "function": "SCL"
+          }
+        ]
+      },
+      "notes": "With I2C/PCF8574 backpack; address 0x27 (some 0x3F). Without backpack the LCD is a 16-pin parallel interface (VSS,VDD,V0,RS,RW,E,D0-D7,A,K)."
+    },
+    {
+      "component_id": "tm1637",
+      "component_name": "TM1637 7-Segment Display",
+      "pin_count": 4,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 3.3,
+        "voltage_max": 5.0,
+        "notes": "Works at 3.3-5V; CLK/DIO are open-drain, need pull-ups (module has them)."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 3.3-5V",
+          "direction": "power",
+          "voltage_min": 3.3,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "CLK",
+          "function": "clock line (open-drain, 2-wire protocol)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "DIO",
+          "function": "data line (open-drain)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "4-digit 7-segment. Two-wire interface (not I2C, but similar)."
+    },
+    {
+      "component_id": "buzzer",
+      "component_name": "Buzzer",
+      "pin_count": 3,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 3.3,
+        "voltage_max": 5.5,
+        "notes": "Module: VCC 3.3-5V; active buzzer sounds on HIGH, passive needs PWM tone."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 3.3-5V",
+          "direction": "power",
+          "voltage_min": 3.3,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "I/O",
+          "function": "signal input (HIGH to sound for active type; PWM for passive type)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "Active buzzer = fixed tone on HIGH; passive = external PWM produces tone. A bare 2-pin buzzer has + and -."
+    },
+    {
+      "component_id": "rgb_led",
+      "component_name": "RGB LED",
+      "pin_count": 4,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "VCC",
+          "GND"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 3.3,
+        "voltage_max": 5.5,
+        "notes": "Common module (e.g. Elegoo): VCC 5V, R/G/B active LOW with onboard resistors. Bare common-cathode LED instead has R,G,B + shared cathode to GND."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply (anode rail) for module type",
+          "direction": "power",
+          "voltage_min": 3.3,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "R",
+          "function": "red channel input (active low on common-anode module; needs 100-330 ohm resistor on bare LED)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "G",
+          "function": "green channel input (resistor required on bare LED)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "B",
+          "function": "blue channel input (resistor required on bare LED)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        }
+      ],
+      "interfaces": {},
+      "notes": "Distinguish module type: common-anode module has VCC + R/G/B (active low); bare common-cathode LED has R,G,B + common GND leg."
+    },
+    {
+      "component_id": "led",
+      "component_name": "LED",
+      "pin_count": 2,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "Anode"
+        ],
+        "gnd_pins": [
+          "Cathode"
+        ],
+        "voltage_min": 1.8,
+        "voltage_max": 3.3,
+        "notes": "Typical forward voltage ~1.8-3.3V depending on color. ALWAYS use a current-limiting resistor (220-330 ohm for 5V)."
+      },
+      "pins": [
+        {
+          "pin": "Anode (+)",
+          "function": "connect to MCU GPIO through series resistor (or to VCC)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "Cathode (-)",
+          "function": "connect to GND (long leg is anode; flat/flat side marks cathode)",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "Forward current ~20mA. Compute resistor: (Vsupply - Vf) / 0.02A."
+    }
+  ]
+}

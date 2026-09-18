@@ -1,0 +1,221 @@
+{
+  "type": "input",
+  "components": [
+    {
+      "component_id": "potentiometer_10k",
+      "component_name": "10K Potentiometer",
+      "pin_count": 3,
+      "logic_level": null,
+      "power": {
+        "vcc_pins": [
+          "Leg 1"
+        ],
+        "gnd_pins": [
+          "Leg 3"
+        ],
+        "voltage_min": 0.0,
+        "voltage_max": 5.5,
+        "notes": "Passive voltage divider. Leg 1 -> VCC, Leg 3 -> GND, Leg 2/wiper -> ADC."
+      },
+      "pins": [
+        {
+          "pin": "Leg 1",
+          "function": "terminal 1 (connect to VCC rail)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "Leg 2",
+          "function": "wiper (connect to MCU ADC; output sweeps VCC to GND as knob turns)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "Leg 3",
+          "function": "terminal 3 (connect to GND)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "10k linear taper. Wiper voltage = VCC * (position). Fine untrimmed input to ADC."
+    },
+    {
+      "component_id": "push_button",
+      "component_name": "Push Button",
+      "pin_count": 4,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [],
+        "gnd_pins": [],
+        "voltage_min": 0.0,
+        "voltage_max": 5.5,
+        "notes": "Momentary tactile switch. Pins T1-T2 are internally connected; T3-T4 are internally connected; pressing bridges the pairs."
+      },
+      "pins": [
+        {
+          "pin": "T1",
+          "function": "terminal 1 (paired with T2; one side to MCU GPIO or VCC)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "T2",
+          "function": "terminal 2 (paired with T1)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "T3",
+          "function": "terminal 3 (paired with T4; other side to GND or GPIO)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "T4",
+          "function": "terminal 4 (paired with T3)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        }
+      ],
+      "interfaces": {},
+      "notes": "Wire one side to GPIO, other to GND, and enable INPUT_PULLUP on the MCU (pressed = LOW), or add external 10k pull-down to VCC (pressed = HIGH)."
+    },
+    {
+      "component_id": "joystick",
+      "component_name": "Analog Joystick",
+      "pin_count": 5,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 3.3,
+        "voltage_max": 5.0,
+        "notes": "Supply 3.3-5V; VRx/VRy swing about VCC/2 at center."
+      },
+      "pins": [
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "VCC",
+          "function": "supply 3.3-5V",
+          "direction": "power",
+          "voltage_min": 3.3,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "VRx",
+          "function": "X-axis analog output (0 to VCC; ~VCC/2 centered)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "VRy",
+          "function": "Y-axis analog output (0 to VCC; ~VCC/2 centered)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "SW",
+          "function": "push-button output (LOW when pressed; ties to GND)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "SW requires MCU INPUT_PULLUP. On 3.3V MCUs feeding 5V VCC will exceed ADC range - supply at 3.3V or divide VRx/VRy."
+    },
+    {
+      "component_id": "keypad_4x4",
+      "component_name": "4x4 Matrix Keypad",
+      "pin_count": 8,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [],
+        "gnd_pins": [],
+        "voltage_min": 0.0,
+        "voltage_max": 5.5,
+        "notes": "Passive switch matrix - no supply pins. Rows and columns scanned by MCU GPIO."
+      },
+      "pins": [
+        {
+          "pin": "R1",
+          "function": "row 1 (connect to MCU output/input; on most keypads row order is R1..R4 then C1..C4)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "R2",
+          "function": "row 2",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "R3",
+          "function": "row 3",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "R4",
+          "function": "row 4",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "C1",
+          "function": "column 1",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "C2",
+          "function": "column 2",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "C3",
+          "function": "column 3",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "C4",
+          "function": "column 4",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        }
+      ],
+      "interfaces": {},
+      "notes": "Connect 8 GPIOs; drive rows low and read columns (with pull-ups) to detect keys. Check labels as some keypads use C1-C4 then R1-R4 order."
+    }
+  ]
+}

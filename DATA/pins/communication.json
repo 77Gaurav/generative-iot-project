@@ -1,0 +1,587 @@
+{
+  "type": "communication",
+  "components": [
+    {
+      "component_id": "esp32_wifi",
+      "component_name": "ESP32 Wi-Fi",
+      "pin_count": 0,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [],
+        "gnd_pins": [],
+        "voltage_min": 0.0,
+        "voltage_max": 0.0,
+        "notes": "Not a discrete component. Wi-Fi + Bluetooth are integrated inside the ESP32 module and share the ESP32's 3V3/GND."
+      },
+      "pins": [],
+      "interfaces": {
+        "WiFi": [
+          {
+            "pin": "integrated",
+            "function": "802.11 b/g/n Wi-Fi via ESP32 antenna (no external wiring required)"
+          }
+        ]
+      },
+      "notes": "Keep the ESP32 antenna area free of metal/ground planes. No extra pin connections needed."
+    },
+    {
+      "component_id": "hc05",
+      "component_name": "HC-05",
+      "pin_count": 6,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 3.3,
+        "voltage_max": 6.0,
+        "notes": "VCC 3.3-6V (onboard regulator); UART logic is 3.3V."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 3.3-6V",
+          "direction": "power",
+          "voltage_min": 3.3,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "TXD",
+          "function": "UART TX (3.3V level, connect to MCU RX)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "RXD",
+          "function": "UART RX (3.3V level; needs divider if MCU is 5V)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "STATE",
+          "function": "connection status output",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "EN/KEY",
+          "function": "enable / AT-command mode (high during power-on enters AT mode)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 6.0
+        }
+      ],
+      "interfaces": {
+        "UART": [
+          {
+            "pin": "TXD",
+            "function": "TX"
+          },
+          {
+            "pin": "RXD",
+            "function": "RX"
+          }
+        ]
+      },
+      "notes": "Serves both master and slave. Default baud 9600 data mode / 38400 AT mode."
+    },
+    {
+      "component_id": "hc06",
+      "component_name": "HC-06",
+      "pin_count": 4,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 3.3,
+        "voltage_max": 6.0,
+        "notes": "VCC 3.3-6V; UART logic 3.3V."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 3.3-6V",
+          "direction": "power",
+          "voltage_min": 3.3,
+          "voltage_max": 6.0
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "TXD",
+          "function": "UART TX (3.3V level)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "RXD",
+          "function": "UART RX (3.3V level)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        }
+      ],
+      "interfaces": {
+        "UART": [
+          {
+            "pin": "TXD",
+            "function": "TX"
+          },
+          {
+            "pin": "RXD",
+            "function": "RX"
+          }
+        ]
+      },
+      "notes": "Slave-only module. Default baud 9600; AT mode at 38400 on many boards."
+    },
+    {
+      "component_id": "sim800l",
+      "component_name": "SIM800L",
+      "pin_count": 8,
+      "logic_level": 2.85,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 3.4,
+        "voltage_max": 4.4,
+        "notes": "3.7-4.2V nominal; surge up to 2A on TX. Do NOT feed 5V directly."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 3.4-4.4V (3.7-4.2V typical, needs 1-2A capable supply)",
+          "direction": "power",
+          "voltage_min": 3.4,
+          "voltage_max": 4.4
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "TXD",
+          "function": "UART TX (2.85V logic)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 2.85
+        },
+        {
+          "pin": "RXD",
+          "function": "UART RX (2.85V logic; level shift from 5V MCU)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 2.85
+        },
+        {
+          "pin": "RST",
+          "function": "reset (active low)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 4.4
+        },
+        {
+          "pin": "NET",
+          "function": "network status LED drive",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 4.4
+        },
+        {
+          "pin": "DTR",
+          "function": "data terminal ready (sleep control)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 2.85
+        },
+        {
+          "pin": "MIC/SPK",
+          "function": "audio interface (mic+/mic-, spk+/spk-) for voice calls",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 2.85
+        }
+      ],
+      "interfaces": {
+        "UART": [
+          {
+            "pin": "TXD",
+            "function": "TX"
+          },
+          {
+            "pin": "RXD",
+            "function": "RX"
+          }
+        ]
+      },
+      "notes": "GSM/GPRS. Add a 100-1000uF bulk capacitor across VCC/GND. AT commands at 9600. SIM card installed."
+    },
+    {
+      "component_id": "nrf24l01",
+      "component_name": "nRF24L01",
+      "pin_count": 8,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 1.9,
+        "voltage_max": 3.6,
+        "notes": "3.3V only; current spikes up to ~12mA TX. Add 10uF capacitor near VCC."
+      },
+      "pins": [
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "VCC",
+          "function": "supply 1.9-3.6V (3.3V)",
+          "direction": "power",
+          "voltage_min": 1.9,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "CE",
+          "function": "chip enable (TX/RX mode control, high to use radio)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "CSN",
+          "function": "SPI chip select (active low)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "SCK",
+          "function": "SPI clock (max 10MHz)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "MOSI",
+          "function": "SPI data in",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "MISO",
+          "function": "SPI data out",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "IRQ",
+          "function": "interrupt output (active low, open drain)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        }
+      ],
+      "interfaces": {
+        "SPI": [
+          {
+            "pin": "SCK",
+            "function": "SCK"
+          },
+          {
+            "pin": "MOSI",
+            "function": "MOSI"
+          },
+          {
+            "pin": "MISO",
+            "function": "MISO"
+          },
+          {
+            "pin": "CSN",
+            "function": "CS"
+          },
+          {
+            "pin": "CE",
+            "function": "CE/rx-tx control"
+          }
+        ]
+      },
+      "notes": "2.4GHz transceiver. Not 5V tolerant."
+    },
+    {
+      "component_id": "lora_sx1278",
+      "component_name": "LoRa SX1278",
+      "pin_count": 6,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 2.7,
+        "voltage_max": 3.6,
+        "notes": "3.3V supply; RF output up to +20dBm (~120mA peak)."
+      },
+      "pins": [
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "VCC",
+          "function": "supply 2.7-3.6V (3.3V)",
+          "direction": "power",
+          "voltage_min": 2.7,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "NSS",
+          "function": "SPI chip select (active low)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "SCK",
+          "function": "SPI clock",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "MOSI",
+          "function": "SPI data in",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "MISO",
+          "function": "SPI data out",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "RST",
+          "function": "reset (active low)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "DIO0",
+          "function": "interrupt/dio output 0 (RX/TX done)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "DIO1",
+          "function": "interrupt output 1",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "DIO2",
+          "function": "interrupt output 2",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "DIO3",
+          "function": "interrupt output 3",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        }
+      ],
+      "interfaces": {
+        "SPI": [
+          {
+            "pin": "SCK",
+            "function": "SCK"
+          },
+          {
+            "pin": "MOSI",
+            "function": "MOSI"
+          },
+          {
+            "pin": "MISO",
+            "function": "MISO"
+          },
+          {
+            "pin": "NSS",
+            "function": "CS"
+          }
+        ]
+      },
+      "notes": "Long-range LoRa 433MHz (EU) / 915MHz (US) modules. Requires antenna."
+    },
+    {
+      "component_id": "can_module_mcp2515",
+      "component_name": "MCP2515 CAN Module",
+      "pin_count": 10,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 4.5,
+        "voltage_max": 5.5,
+        "notes": "Standard modules run at 5V (MCP2515 + TJA1050)."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 5V",
+          "direction": "power",
+          "voltage_min": 4.5,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "SI",
+          "function": "SPI MOSI (data in)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "SO",
+          "function": "SPI MISO (data out)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "SCK",
+          "function": "SPI clock",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "CS",
+          "function": "SPI chip select (active low)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "INT",
+          "function": "interrupt output (active low, drives MCU)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "VCC_SD",
+          "function": "settling-time control for micro SD use (often NC)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "CANH",
+          "function": "CAN bus high (twisted pair to other nodes)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "CANL",
+          "function": "CAN bus low (twisted pair to other nodes)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        }
+      ],
+      "interfaces": {
+        "SPI": [
+          {
+            "pin": "SCK",
+            "function": "SCK"
+          },
+          {
+            "pin": "SO",
+            "function": "MISO"
+          },
+          {
+            "pin": "SI",
+            "function": "MOSI"
+          },
+          {
+            "pin": "CS",
+            "function": "CS"
+          }
+        ],
+        "CAN": [
+          {
+            "pin": "CANH",
+            "function": "CANH"
+          },
+          {
+            "pin": "CANL",
+            "function": "CANL"
+          }
+        ]
+      },
+      "notes": "120 ohm termination resistor required at each end of the CAN bus."
+    }
+  ]
+}

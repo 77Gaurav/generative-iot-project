@@ -9,5 +9,7 @@ class AgentState(TypedDict):
     requirements: dict
     documents: List[dict]
     validation: dict
+    pin_layouts: List[dict]
+    wiring: dict
     plan: List[str]
     status: str

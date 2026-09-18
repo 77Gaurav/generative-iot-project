@@ -1,0 +1,271 @@
+{
+  "type": "memory",
+  "components": [
+    {
+      "component_id": "microsd_module",
+      "component_name": "MicroSD Card Module",
+      "pin_count": 6,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 3.3,
+        "voltage_max": 5.5,
+        "notes": "Module has onboard 3.3V regulator + level translator; usually powered at 5V."
+      },
+      "pins": [
+        {
+          "pin": "VCC",
+          "function": "supply 3.3-5.5V (5V typical)",
+          "direction": "power",
+          "voltage_min": 3.3,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "CS",
+          "function": "SPI chip select (active low)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "MOSI",
+          "function": "SPI data in (card DI)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "SCK",
+          "function": "SPI clock",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "MISO",
+          "function": "SPI data out (card DO)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        }
+      ],
+      "interfaces": {
+        "SPI": [
+          {
+            "pin": "SCK",
+            "function": "SCK"
+          },
+          {
+            "pin": "MISO",
+            "function": "MISO"
+          },
+          {
+            "pin": "MOSI",
+            "function": "MOSI"
+          },
+          {
+            "pin": "CS",
+            "function": "CS"
+          }
+        ]
+      },
+      "notes": "Insert card facing the module pads correctly. SD cards need formatting (FAT32). Use CS-to-3.3V pull-up."
+    },
+    {
+      "component_id": "at24c256",
+      "component_name": "AT24C256 EEPROM",
+      "pin_count": 8,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 2.5,
+        "voltage_max": 5.5,
+        "notes": "VCC 2.5-5.5V; logic follows VCC (works at 3.3V or 5V)."
+      },
+      "pins": [
+        {
+          "pin": "A0",
+          "function": "address bit 0 (tie to GND/VCC, part of I2C addr)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A1",
+          "function": "address bit 1",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "A2",
+          "function": "address bit 2",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "SDA",
+          "function": "I2C data (requires pull-up)",
+          "direction": "bidirectional",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "SCL",
+          "function": "I2C clock",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "WP",
+          "function": "write protect (high = read only; tie GND to allow writes)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "VCC",
+          "function": "supply 2.5-5.5V",
+          "direction": "power",
+          "voltage_min": 2.5,
+          "voltage_max": 5.5
+        }
+      ],
+      "interfaces": {
+        "I2C": [
+          {
+            "pin": "SDA",
+            "function": "SDA"
+          },
+          {
+            "pin": "SCL",
+            "function": "SCL"
+          }
+        ]
+      },
+      "notes": "256Kbit (32KB). I2C address 0x50 + (A2 A1 A0), i.e. 0x50-0x57."
+    },
+    {
+      "component_id": "w25q32",
+      "component_name": "W25Q32 Flash",
+      "pin_count": 8,
+      "logic_level": 3.3,
+      "power": {
+        "vcc_pins": [
+          "VCC"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 2.7,
+        "voltage_max": 3.6,
+        "notes": "3.3V only."
+      },
+      "pins": [
+        {
+          "pin": "CS",
+          "function": "SPI chip select (active low)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "DO",
+          "function": "Data out / IO1 (SPI MISO)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "WP",
+          "function": "write protect / IO2",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "GND",
+          "function": "ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "DI",
+          "function": "Data in / IO0 (SPI MOSI)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "CLK",
+          "function": "SPI clock",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "HOLD",
+          "function": "hold / IO3 (active low; keep high if unused)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 3.6
+        },
+        {
+          "pin": "VCC",
+          "function": "supply 2.7-3.6V (3.3V)",
+          "direction": "power",
+          "voltage_min": 2.7,
+          "voltage_max": 3.6
+        }
+      ],
+      "interfaces": {
+        "SPI": [
+          {
+            "pin": "CLK",
+            "function": "SCK"
+          },
+          {
+            "pin": "DO",
+            "function": "MISO"
+          },
+          {
+            "pin": "DI",
+            "function": "MOSI"
+          },
+          {
+            "pin": "CS",
+            "function": "CS"
+          }
+        ]
+      },
+      "notes": "32Mbit SPI NOR flash. Supports standard SPI and Quad SPI (WP/HOLD as IO2/IO3)."
+    }
+  ]
+}

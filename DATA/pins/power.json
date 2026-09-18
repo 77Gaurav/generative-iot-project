@@ -1,0 +1,235 @@
+{
+  "type": "power",
+  "components": [
+    {
+      "component_id": "tp4056",
+      "component_name": "TP4056",
+      "pin_count": 8,
+      "logic_level": 5,
+      "power": {
+        "vcc_pins": [
+          "IN+",
+          "BAT+"
+        ],
+        "gnd_pins": [
+          "IN-",
+          "BAT-"
+        ],
+        "voltage_min": 4.0,
+        "voltage_max": 8.0,
+        "notes": "Charge module: USB 5V input charges a single Li-ion cell at up to 1A (set by Rprog)."
+      },
+      "pins": [
+        {
+          "pin": "IN+",
+          "function": "USB/VIN 5V charge input",
+          "direction": "power",
+          "voltage_min": 4.0,
+          "voltage_max": 8.0
+        },
+        {
+          "pin": "IN-",
+          "function": "charge input ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "BAT+",
+          "function": "battery positive (connects to Li-ion cell)",
+          "direction": "bidirectional",
+          "voltage_min": 2.5,
+          "voltage_max": 4.3
+        },
+        {
+          "pin": "BAT-",
+          "function": "battery negative (connects to cell minus; join to GND of system)",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "OUT+",
+          "function": "5V protected output (on modules with DW01 + FS8205 protection)",
+          "direction": "output",
+          "voltage_min": 3.3,
+          "voltage_max": 5.5
+        },
+        {
+          "pin": "OUT-",
+          "function": "output ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "STDBY",
+          "function": "charge-done indicator (on with full battery)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        },
+        {
+          "pin": "CHRG",
+          "function": "charging indicator (on while charging)",
+          "direction": "output",
+          "voltage_min": 0.0,
+          "voltage_max": 5.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "Only for single-cell 3.7V Li-ion. Module output 'OUT+' carries BAT+ (3.7-4.2V) plus input 5V when charging."
+    },
+    {
+      "component_id": "lm7805",
+      "component_name": "LM7805",
+      "pin_count": 3,
+      "logic_level": null,
+      "power": {
+        "vcc_pins": [
+          "VIN",
+          "VOUT"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 7.0,
+        "voltage_max": 25.0,
+        "notes": "Input 7-25V, fixed 5V output. Linear regulator; heat from voltage drop is wasted."
+      },
+      "pins": [
+        {
+          "pin": "VIN",
+          "function": "unregulated input 7-25V (typ 7-12V; min ~2V above output)",
+          "direction": "power",
+          "voltage_min": 7.0,
+          "voltage_max": 25.0
+        },
+        {
+          "pin": "GND",
+          "function": "ground (shared)",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "VOUT",
+          "function": "regulated 5V output (up to 1A with heatsink)",
+          "direction": "output",
+          "voltage_min": 4.8,
+          "voltage_max": 5.2
+        }
+      ],
+      "interfaces": {},
+      "notes": "Add 0.33uF input + 0.1uF output capacitors. TO-220 tab = VOUT/GND depending on pinout: pins are VIN-GND-VOUT left to right (face-on)."
+    },
+    {
+      "component_id": "ams1117_3v3",
+      "component_name": "AMS1117 3.3V",
+      "pin_count": 3,
+      "logic_level": null,
+      "power": {
+        "vcc_pins": [
+          "VIN",
+          "VOUT"
+        ],
+        "gnd_pins": [
+          "GND"
+        ],
+        "voltage_min": 4.5,
+        "voltage_max": 12.0,
+        "notes": "Input 4.5-12V, fixed 3.3V output up to ~800mA."
+      },
+      "pins": [
+        {
+          "pin": "VIN",
+          "function": "unregulated input 4.5-12V (dropout ~1.1V)",
+          "direction": "power",
+          "voltage_min": 4.5,
+          "voltage_max": 12.0
+        },
+        {
+          "pin": "GND",
+          "function": "ground (shared)",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "VOUT",
+          "function": "regulated 3.3V output",
+          "direction": "output",
+          "voltage_min": 3.2,
+          "voltage_max": 3.4
+        }
+      ],
+      "interfaces": {},
+      "notes": "Soldered onto 3.3V regulator boards with IN / GND / OUT pads. Add 10uF caps on input and output."
+    },
+    {
+      "component_id": "mp1584",
+      "component_name": "MP1584 Buck Converter",
+      "pin_count": 6,
+      "logic_level": null,
+      "power": {
+        "vcc_pins": [
+          "VIN",
+          "VOUT"
+        ],
+        "gnd_pins": [
+          "GND",
+          "GND"
+        ],
+        "voltage_min": 4.5,
+        "voltage_max": 28.0,
+        "notes": "Switching buck: input up to 28V; output adjustable 0.8V to VIN via trimpot. Up to 3A."
+      },
+      "pins": [
+        {
+          "pin": "VIN",
+          "function": "input 4.5-28V",
+          "direction": "power",
+          "voltage_min": 4.5,
+          "voltage_max": 28.0
+        },
+        {
+          "pin": "GND",
+          "function": "input ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "VOUT",
+          "function": "regulated output (adjustable, default 5V on many boards)",
+          "direction": "output",
+          "voltage_min": 0.8,
+          "voltage_max": 28.0
+        },
+        {
+          "pin": "GND",
+          "function": "output ground",
+          "direction": "power",
+          "voltage_min": 0.0,
+          "voltage_max": 0.0
+        },
+        {
+          "pin": "EN",
+          "function": "enable (pull high to run; low shuts down)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 28.0
+        },
+        {
+          "pin": "TRIM",
+          "function": "output adjust trimpot (set with multimeter before connecting load)",
+          "direction": "input",
+          "voltage_min": 0.0,
+          "voltage_max": 1.0
+        }
+      ],
+      "interfaces": {},
+      "notes": "Set the trimpot to the desired output voltage BEFORE connecting any 3.3V/5V device. High efficiency vs LM7805."
+    }
+  ]
+}
