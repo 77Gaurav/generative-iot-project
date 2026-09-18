@@ -1,0 +1,430 @@
+[
+    {
+      "component_id": "esp32",
+      "component_name": "ESP32",
+      "type": "compute",
+      "description": "32-bit microcontroller with integrated Wi-Fi and Bluetooth, GPIO, ADC, PWM, I2C, SPI and UART interfaces. Commonly used for IoT sensor processing and wireless applications.",
+      "keywords": ["microcontroller", "IoT", "Wi-Fi", "Bluetooth", "GPIO", "sensor"]
+    },
+    {
+      "component_id": "esp8266",
+      "component_name": "ESP8266",
+      "type": "compute",
+      "description": "Wi-Fi-enabled microcontroller commonly used for low-cost IoT devices, wireless sensor nodes and internet-connected embedded applications.",
+      "keywords": ["microcontroller", "Wi-Fi", "IoT", "wireless", "NodeMCU"]
+    },
+    {
+      "component_id": "arduino_uno",
+      "component_name": "Arduino Uno",
+      "type": "compute",
+      "description": "ATmega328P-based microcontroller board with digital GPIO, analog inputs, PWM, SPI, I2C and UART interfaces. Commonly used in academic and beginner embedded projects.",
+      "keywords": ["Arduino", "microcontroller", "embedded", "GPIO", "ADC", "PWM"]
+    },
+    {
+      "component_id": "arduino_nano",
+      "component_name": "Arduino Nano",
+      "type": "compute",
+      "description": "Compact ATmega328P microcontroller board providing digital GPIO, analog inputs, PWM, SPI, I2C and UART interfaces.",
+      "keywords": ["Arduino", "Nano", "microcontroller", "embedded"]
+    },
+    {
+      "component_id": "arduino_mega",
+      "component_name": "Arduino Mega 2560",
+      "type": "compute",
+      "description": "Microcontroller board with a large number of GPIO pins, analog inputs, PWM outputs and multiple UART interfaces, useful for projects requiring many peripherals.",
+      "keywords": ["Arduino", "Mega", "microcontroller", "many GPIO", "UART"]
+    },
+    {
+      "component_id": "raspberry_pi_4",
+      "component_name": "Raspberry Pi 4",
+      "type": "compute",
+      "description": "Linux-based single-board computer with GPIO, Wi-Fi, Bluetooth, Ethernet, USB and HDMI, commonly used for IoT gateways, edge computing and academic projects.",
+      "keywords": ["Raspberry Pi", "SBC", "Linux", "IoT gateway", "edge computing"]
+    },
+    {
+      "component_id": "raspberry_pi_zero_2w",
+      "component_name": "Raspberry Pi Zero 2 W",
+      "type": "compute",
+      "description": "Small Linux single-board computer with Wi-Fi, Bluetooth and GPIO suitable for compact IoT and embedded applications.",
+      "keywords": ["Raspberry Pi", "SBC", "Wi-Fi", "Bluetooth", "Linux"]
+    },
+    {
+      "component_id": "raspberry_pi_pico",
+      "component_name": "Raspberry Pi Pico",
+      "type": "compute",
+      "description": "RP2040-based microcontroller board with programmable GPIO, ADC, PWM, I2C, SPI and UART interfaces.",
+      "keywords": ["Pico", "RP2040", "microcontroller", "GPIO", "embedded"]
+    },
+    {
+      "component_id": "stm32f103",
+      "component_name": "STM32F103C8T6",
+      "type": "compute",
+      "description": "32-bit ARM Cortex-M3 microcontroller commonly used for embedded systems and academic projects, supporting GPIO, ADC, PWM, SPI, I2C and UART.",
+      "keywords": ["STM32", "ARM", "Cortex-M3", "microcontroller", "embedded"]
+    },
+  
+    {
+      "component_id": "dht11",
+      "component_name": "DHT11",
+      "type": "sensor",
+      "description": "Digital temperature and humidity sensor used for basic environmental monitoring and academic IoT projects.",
+      "keywords": ["temperature", "humidity", "environment", "DHT", "sensor"]
+    },
+    {
+      "component_id": "dht22",
+      "component_name": "DHT22",
+      "type": "sensor",
+      "description": "Digital temperature and humidity sensor with a wider measurement range and higher accuracy than DHT11.",
+      "keywords": ["temperature", "humidity", "environment", "DHT", "sensor"]
+    },
+    {
+      "component_id": "bme280",
+      "component_name": "BME280",
+      "type": "sensor",
+      "description": "Environmental sensor measuring temperature, relative humidity and atmospheric pressure through I2C or SPI.",
+      "keywords": ["temperature", "humidity", "pressure", "environment", "I2C", "SPI"]
+    },
+    {
+      "component_id": "bmp280",
+      "component_name": "BMP280",
+      "type": "sensor",
+      "description": "Digital barometric pressure and temperature sensor supporting I2C and SPI communication.",
+      "keywords": ["pressure", "barometer", "temperature", "I2C", "SPI"]
+    },
+    {
+      "component_id": "mpu6050",
+      "component_name": "MPU6050",
+      "type": "sensor",
+      "description": "Six-axis IMU containing a three-axis accelerometer and three-axis gyroscope, commonly used for motion and orientation detection.",
+      "keywords": ["IMU", "accelerometer", "gyroscope", "motion", "orientation", "I2C"]
+    },
+    {
+      "component_id": "mpu9250",
+      "component_name": "MPU9250",
+      "type": "sensor",
+      "description": "Nine-axis inertial measurement unit combining accelerometer, gyroscope and magnetometer functionality.",
+      "keywords": ["IMU", "accelerometer", "gyroscope", "magnetometer", "motion"]
+    },
+    {
+      "component_id": "hc_sr04",
+      "component_name": "HC-SR04",
+      "type": "sensor",
+      "description": "Ultrasonic distance sensor using trigger and echo signals to measure the distance to an object.",
+      "keywords": ["ultrasonic", "distance", "obstacle", "range"]
+    },
+    {
+      "component_id": "pir_hcsr501",
+      "component_name": "HC-SR501 PIR",
+      "type": "sensor",
+      "description": "Passive infrared motion sensor used to detect movement and human presence.",
+      "keywords": ["PIR", "motion", "presence", "human detection"]
+    },
+    {
+      "component_id": "ldr",
+      "component_name": "LDR",
+      "type": "sensor",
+      "description": "Light-dependent resistor whose resistance changes with light intensity, commonly used for basic ambient light detection.",
+      "keywords": ["light", "LDR", "photoresistor", "brightness", "analog"]
+    },
+    {
+      "component_id": "bh1750",
+      "component_name": "BH1750",
+      "type": "sensor",
+      "description": "Digital ambient light sensor that measures illumination in lux using an I2C interface.",
+      "keywords": ["light", "lux", "brightness", "ambient", "I2C"]
+    },
+    {
+      "component_id": "mq2",
+      "component_name": "MQ-2",
+      "type": "sensor",
+      "description": "Gas and smoke sensor commonly used to detect combustible gases, smoke and air-quality-related conditions.",
+      "keywords": ["gas", "smoke", "MQ2", "air quality", "analog"]
+    },
+    {
+      "component_id": "mq135",
+      "component_name": "MQ-135",
+      "type": "sensor",
+      "description": "Gas sensor commonly used in educational projects for detecting changes associated with air quality and gases.",
+      "keywords": ["gas", "air quality", "pollution", "MQ135"]
+    },
+    {
+      "component_id": "soil_moisture",
+      "component_name": "Soil Moisture Sensor",
+      "type": "sensor",
+      "description": "Sensor module used to detect soil moisture levels for irrigation, plant monitoring and agricultural IoT applications.",
+      "keywords": ["soil", "moisture", "agriculture", "irrigation", "plant"]
+    },
+    {
+      "component_id": "rain_sensor",
+      "component_name": "Rain Sensor",
+      "type": "sensor",
+      "description": "Sensor module that detects the presence and intensity of water or rainfall on its sensing surface.",
+      "keywords": ["rain", "water", "weather", "precipitation"]
+    },
+    {
+      "component_id": "flame_sensor",
+      "component_name": "Flame Sensor",
+      "type": "sensor",
+      "description": "Infrared-based sensor module used to detect flame or fire-related infrared radiation.",
+      "keywords": ["flame", "fire", "IR", "fire detection"]
+    },
+    {
+      "component_id": "ir_obstacle",
+      "component_name": "IR Obstacle Sensor",
+      "type": "sensor",
+      "description": "Infrared emitter and receiver module used to detect nearby objects and obstacles.",
+      "keywords": ["IR", "infrared", "obstacle", "proximity"]
+    },
+    {
+      "component_id": "neo6m",
+      "component_name": "NEO-6M GPS",
+      "type": "sensor",
+      "description": "GPS receiver module providing geographic position, speed, altitude and time information through UART.",
+      "keywords": ["GPS", "location", "latitude", "longitude", "navigation", "UART"]
+    },
+    {
+      "component_id": "max30102",
+      "component_name": "MAX30102",
+      "type": "sensor",
+      "description": "Optical sensor module used for pulse and blood oxygen-related measurements in wearable and academic prototypes.",
+      "keywords": ["pulse", "heart rate", "SpO2", "optical", "I2C"]
+    },
+    {
+      "component_id": "ads1115",
+      "component_name": "ADS1115",
+      "type": "sensor",
+      "description": "16-bit precision analog-to-digital converter providing multiple analog input channels through I2C.",
+      "keywords": ["ADC", "analog", "precision", "I2C"]
+    },
+  
+    {
+      "component_id": "esp32_wifi",
+      "component_name": "ESP32 Wi-Fi",
+      "type": "communication",
+      "description": "Integrated Wi-Fi connectivity available on ESP32 microcontrollers for connecting IoT devices to local networks and the internet.",
+      "keywords": ["Wi-Fi", "wireless", "internet", "network", "IoT"]
+    },
+    {
+      "component_id": "hc05",
+      "component_name": "HC-05",
+      "type": "communication",
+      "description": "Bluetooth Classic module providing wireless serial communication through UART.",
+      "keywords": ["Bluetooth", "wireless", "UART", "serial"]
+    },
+    {
+      "component_id": "hc06",
+      "component_name": "HC-06",
+      "type": "communication",
+      "description": "Bluetooth Classic slave module commonly used for wireless UART communication in embedded projects.",
+      "keywords": ["Bluetooth", "wireless", "UART", "serial"]
+    },
+    {
+      "component_id": "sim800l",
+      "component_name": "SIM800L",
+      "type": "communication",
+      "description": "GSM/GPRS cellular module supporting SMS, voice and packet-data communication through UART.",
+      "keywords": ["GSM", "GPRS", "cellular", "SMS", "UART"]
+    },
+    {
+      "component_id": "nrf24l01",
+      "component_name": "nRF24L01",
+      "type": "communication",
+      "description": "2.4 GHz low-power wireless transceiver commonly used for communication between embedded devices.",
+      "keywords": ["RF", "wireless", "2.4GHz", "transceiver", "SPI"]
+    },
+    {
+      "component_id": "lora_sx1278",
+      "component_name": "LoRa SX1278",
+      "type": "communication",
+      "description": "Long-range low-power radio transceiver used for IoT sensor networks and long-distance device communication.",
+      "keywords": ["LoRa", "long range", "wireless", "IoT", "SX1278"]
+    },
+    {
+      "component_id": "can_module_mcp2515",
+      "component_name": "MCP2515 CAN Module",
+      "type": "communication",
+      "description": "CAN bus controller module used to provide CAN communication to microcontrollers through SPI.",
+      "keywords": ["CAN", "CAN bus", "automotive", "SPI"]
+    },
+  
+    {
+      "component_id": "microsd_module",
+      "component_name": "MicroSD Card Module",
+      "type": "memory",
+      "description": "Removable flash storage module used for sensor-data logging, file storage and persistent embedded-system data.",
+      "keywords": ["SD card", "storage", "data logging", "flash", "SPI"]
+    },
+    {
+      "component_id": "at24c256",
+      "component_name": "AT24C256 EEPROM",
+      "type": "memory",
+      "description": "256-Kbit non-volatile EEPROM used to store configuration values, calibration data and small persistent datasets.",
+      "keywords": ["EEPROM", "nonvolatile", "persistent", "I2C", "configuration"]
+    },
+    {
+      "component_id": "w25q32",
+      "component_name": "W25Q32 Flash",
+      "type": "memory",
+      "description": "Serial NOR flash memory used for persistent program data, configuration and embedded storage.",
+      "keywords": ["flash", "NOR", "SPI", "storage", "memory"]
+    },
+  
+    {
+      "component_id": "oled_ssd1306",
+      "component_name": "SSD1306 OLED",
+      "type": "output",
+      "description": "Small monochrome OLED display commonly used to display sensor values, system status and text in embedded projects.",
+      "keywords": ["OLED", "display", "screen", "I2C", "SPI"]
+    },
+    {
+      "component_id": "lcd_16x2",
+      "component_name": "16x2 LCD",
+      "type": "output",
+      "description": "Character LCD capable of displaying two rows of sixteen characters, commonly used for basic embedded-system user interfaces.",
+      "keywords": ["LCD", "display", "screen", "16x2", "I2C"]
+    },
+    {
+      "component_id": "tm1637",
+      "component_name": "TM1637 7-Segment Display",
+      "type": "output",
+      "description": "Four-digit seven-segment display module used to show numbers, counters, sensor values and time.",
+      "keywords": ["7 segment", "display", "numeric", "TM1637"]
+    },
+    {
+      "component_id": "buzzer",
+      "component_name": "Buzzer",
+      "type": "output",
+      "description": "Electronic buzzer used to provide audible alerts, alarms and status notifications.",
+      "keywords": ["buzzer", "alarm", "sound", "audio"]
+    },
+    {
+      "component_id": "rgb_led",
+      "component_name": "RGB LED",
+      "type": "output",
+      "description": "LED containing red, green and blue channels that can produce multiple colors for visual indication.",
+      "keywords": ["LED", "RGB", "light", "indicator"]
+    },
+    {
+      "component_id": "led",
+      "component_name": "LED",
+      "type": "output",
+      "description": "Light-emitting diode used as a simple visual indicator for device status and digital outputs.",
+      "keywords": ["LED", "light", "indicator", "GPIO"]
+    },
+  
+    {
+      "component_id": "servo_sg90",
+      "component_name": "SG90 Servo Motor",
+      "type": "actuator",
+      "description": "Small positional servo motor controlled using a PWM signal and commonly used in robotics and automation projects.",
+      "keywords": ["servo", "motor", "PWM", "position", "robotics"]
+    },
+    {
+      "component_id": "dc_motor",
+      "component_name": "DC Motor",
+      "type": "actuator",
+      "description": "Electric motor used to produce continuous rotational motion in robotics, automation and mechanical projects.",
+      "keywords": ["motor", "DC", "rotation", "robotics"]
+    },
+    {
+      "component_id": "l298n",
+      "component_name": "L298N Motor Driver",
+      "type": "actuator",
+      "description": "Dual H-bridge motor driver used to control the direction and speed of DC motors.",
+      "keywords": ["motor driver", "H-bridge", "DC motor", "PWM", "robotics"]
+    },
+    {
+      "component_id": "relay_module",
+      "component_name": "5V Relay Module",
+      "type": "actuator",
+      "description": "Electromechanical switching module controlled by a digital signal and commonly used to switch external electrical loads.",
+      "keywords": ["relay", "switch", "load control", "GPIO", "automation"]
+    },
+    {
+      "component_id": "stepper_28byj48",
+      "component_name": "28BYJ-48 Stepper Motor",
+      "type": "actuator",
+      "description": "Small geared stepper motor commonly used for controlled rotational movement in educational robotics and automation projects.",
+      "keywords": ["stepper", "motor", "position", "robotics"]
+    },
+  
+    {
+      "component_id": "uln2003",
+      "component_name": "ULN2003",
+      "type": "driver",
+      "description": "Darlington transistor array used to drive relays, motors, solenoids and other loads from low-current microcontroller GPIO outputs.",
+      "keywords": ["driver", "transistor", "relay", "motor", "GPIO"]
+    },
+    {
+      "component_id": "mcp23017",
+      "component_name": "MCP23017",
+      "type": "driver",
+      "description": "16-bit I2C GPIO expander that provides additional digital input and output pins for microcontroller projects.",
+      "keywords": ["GPIO expander", "I2C", "digital IO", "MCP23017"]
+    },
+    {
+      "component_id": "pcf8574",
+      "component_name": "PCF8574",
+      "type": "driver",
+      "description": "8-bit I2C GPIO expander used to increase the number of digital input and output pins.",
+      "keywords": ["GPIO expander", "I2C", "digital IO"]
+    },
+  
+    {
+      "component_id": "tp4056",
+      "component_name": "TP4056",
+      "type": "power",
+      "description": "Single-cell lithium-ion battery charging module commonly used in portable embedded and IoT devices.",
+      "keywords": ["battery charger", "Li-ion", "charging", "power"]
+    },
+    {
+      "component_id": "lm7805",
+      "component_name": "LM7805",
+      "type": "power",
+      "description": "Linear voltage regulator used to provide a regulated 5V output from a higher DC input voltage.",
+      "keywords": ["voltage regulator", "5V", "power supply", "linear regulator"]
+    },
+    {
+      "component_id": "ams1117_3v3",
+      "component_name": "AMS1117 3.3V",
+      "type": "power",
+      "description": "Linear voltage regulator module used to convert a higher DC voltage to a regulated 3.3V supply.",
+      "keywords": ["voltage regulator", "3.3V", "power supply", "LDO"]
+    },
+    {
+      "component_id": "mp1584",
+      "component_name": "MP1584 Buck Converter",
+      "type": "power",
+      "description": "Adjustable DC-DC buck converter used to step down an input voltage to a lower regulated output voltage.",
+      "keywords": ["buck converter", "DC-DC", "voltage regulator", "power"]
+    },
+  
+    {
+      "component_id": "potentiometer_10k",
+      "component_name": "10K Potentiometer",
+      "type": "input",
+      "description": "Variable resistor commonly used as an analog input, adjustable voltage divider or control knob in embedded projects.",
+      "keywords": ["potentiometer", "analog", "variable resistor", "input"]
+    },
+    {
+      "component_id": "push_button",
+      "component_name": "Push Button",
+      "type": "input",
+      "description": "Momentary mechanical switch commonly used as a digital user input for embedded systems.",
+      "keywords": ["button", "switch", "digital input", "GPIO"]
+    },
+    {
+      "component_id": "joystick",
+      "component_name": "Analog Joystick",
+      "type": "input",
+      "description": "Two-axis analog joystick with push-button input commonly used for robotics and control interfaces.",
+      "keywords": ["joystick", "analog", "input", "control", "ADC"]
+    },
+    {
+      "component_id": "keypad_4x4",
+      "component_name": "4x4 Matrix Keypad",
+      "type": "input",
+      "description": "Matrix keypad providing sixteen keys through row and column GPIO connections.",
+      "keywords": ["keypad", "matrix", "input", "buttons", "GPIO"]
+    }
+  ]
