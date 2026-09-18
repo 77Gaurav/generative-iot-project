@@ -1,0 +1,5 @@
+# CPU-only PyTorch (no CUDA deps, much smaller).
+# This file uses the PyTorch CPU index for torch only.
+--index-url https://download.pytorch.org/whl/cpu
+
+torch==2.14.0+cpu

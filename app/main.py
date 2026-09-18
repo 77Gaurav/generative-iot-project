@@ -7,7 +7,11 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-logfire.configure(token=os.getenv("LOGFIRE_TOKEN"))
+logfire.configure(
+    service_name="generative-iot-project",
+    token=os.getenv("LOGFIRE_TOKEN") or None,
+    send_to_logfire="if-token-present",
+)
 
 # Now safe to import app modules - logfire is already active
 from fastapi import FastAPI, Response
@@ -62,28 +66,23 @@ def query(request: QueryRequest):
     config = {"configurable": {"thread_id": thread_id}}
 
     try:
-        # Gate 1: NeMo Guardrails — blocks off-topic, jailbreaks, and handles dialog
-        rail_fired, rail_response = guard(q)
-        if rail_fired:
-            logfire.info(f"🛡️ Request blocked by guardrails | thread={thread_id}")
-            return {
-                "question": q,
-                "answer": rail_response,
-                "thought_process": ["Intent: Guardrails Fired", "Retrieval: Skipped"],
-                "status": "Blocked by guardrails.",
-                "sources": []
-            }
-
-        # Gate 2: LangGraph RAG pipeline
+        # LangGraph RAG pipeline: planner -> retriever -> responder
         # Run the graph synchronously to preserve Logfire context variables
         final_output = rag_agent.invoke(initial_state, config=config)
 
+        validation = final_output.get("validation", {})
+        documents = final_output.get("documents", [])
         return {
             "question": q,
-            "answer": final_output.get("final_answer"),
+            "answer": validation.get("system_valid", False),
+            "components": validation.get("components", []),
+            "checks": validation.get("checks", []),
+            "missing_requirements": validation.get("missing_requirements", []),
+            "confidence": validation.get("confidence"),
+            "requirements": final_output.get("requirements", {}),
             "thought_process": final_output.get("plan"),
             "status": final_output.get("status"),
-            "sources": final_output.get("documents", [])
+            "sources": documents,
         }
     except Exception as e:
         logfire.error(f"❌ Backend Execution Failed: {e}")
